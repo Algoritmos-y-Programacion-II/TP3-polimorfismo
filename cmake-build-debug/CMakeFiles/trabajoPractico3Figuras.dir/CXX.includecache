@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/valentina/Documentos/Algo II/trabajoPractico3Figuras/Circulo.h
+Figura.h
+/home/valentina/Documentos/Algo II/trabajoPractico3Figuras/Figura.h
+
+/home/valentina/Documentos/Algo II/trabajoPractico3Figuras/Figura.h
+
+/home/valentina/Documentos/Algo II/trabajoPractico3Figuras/Lista.h
+Nodo.h
+/home/valentina/Documentos/Algo II/trabajoPractico3Figuras/Nodo.h
+
+/home/valentina/Documentos/Algo II/trabajoPractico3Figuras/Nodo.h
+
+/home/valentina/Documentos/Algo II/trabajoPractico3Figuras/Rectangulo.h
+Figura.h
+/home/valentina/Documentos/Algo II/trabajoPractico3Figuras/Figura.h
+
+/home/valentina/Documentos/Algo II/trabajoPractico3Figuras/Triangulo.h
+Figura.h
+/home/valentina/Documentos/Algo II/trabajoPractico3Figuras/Figura.h
+
+/home/valentina/Documentos/Algo II/trabajoPractico3Figuras/main.cpp
+iostream
+-
+fstream
+-
+Lista.h
+/home/valentina/Documentos/Algo II/trabajoPractico3Figuras/Lista.h
+Figura.h
+/home/valentina/Documentos/Algo II/trabajoPractico3Figuras/Figura.h
+Rectangulo.h
+/home/valentina/Documentos/Algo II/trabajoPractico3Figuras/Rectangulo.h
+Triangulo.h
+/home/valentina/Documentos/Algo II/trabajoPractico3Figuras/Triangulo.h
+Circulo.h
+/home/valentina/Documentos/Algo II/trabajoPractico3Figuras/Circulo.h
+
