@@ -1,0 +1,48 @@
+# Esteblece el comportamiento predeterminado, en caso de que las personas no tengan configurado core.autocrlf.
+* text=auto
+
+# Lo anterior va a manejar todos los archivos que no sean los siguientes
+*.gitattributes text
+.gitignore      text
+*.md            text
+
+# Evita que los siguientes archivos se exporten
+.gitattributes  export-ignore
+.gitignore      export-ignore
+
+# Sources
+*.c     text diff=c
+*.cc    text diff=cpp
+*.cxx   text diff=cpp
+*.cpp   text diff=cpp
+*.c++   text diff=cpp
+*.hpp   text diff=cpp
+*.h     text diff=c
+*.h++   text diff=cpp
+*.hh    text diff=cpp
+
+# Archivos de objeto compilados
+*.slo   binary
+*.lo    binary
+*.o     binary
+*.obj   binary
+
+# Headers precompilados
+*.gch   binary
+*.pch   binary
+
+# Librerias dinamicas compiladas
+*.so    binary
+*.dylib binary
+*.dll   binary
+
+# Librerias estaticas compiladas
+*.lai   binary
+*.la    binary
+*.a     binary
+*.lib   binary
+
+# Ejecutables
+*.exe   binary
+*.out   binary
+*.app   binary
