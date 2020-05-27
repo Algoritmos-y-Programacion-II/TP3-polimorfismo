@@ -23,7 +23,7 @@ Instalación
 	- Linux 
 	
 	      sudo apt-get update
-		    sudo apt-get install git
+		  sudo apt-get install git
 		    
 	- Windows [Descargar Git](https://git-scm.com/downloads)
 
