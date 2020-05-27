@@ -13,29 +13,37 @@ Instalación
             sudo apt-get update
             sudo apt-get upgrade
             sudo apt-get install build-essential
-    - Windows [MinGw](https://osdn.net/projects/mingw/releases/) 
-- Si no tiene instalado git instalelo
+            
+    - Windows 
+        - [MinGw](https://osdn.net/projects/mingw/releases/) 
+        - [Cygwin](https://sourceware.org/cygwin/)
+        - [CLang](https://releases.llvm.org/download.html)
+        
+- Instale Git
 	- Linux 
 	
 	      sudo apt-get update
 		    sudo apt-get install git
-	- Windows [git](https://git-scm.com/downloads)
+		    
+	- Windows [Descargar Git](https://git-scm.com/downloads)
+
 - Desde la terminal vaya a la ubicacion en donde desea tener el proyecto, y clonelo con `git clone https://github.com/valva-ro/trabajoPractico2Ahorcado` 
 - Asegure de tener un archivo .txt en el directorio del proyecto.
 - Compile con `g++ *.cpp -o figuras`
+   
     - Si el archivo de texto se llama "figuras.txt" 
     
         Ejecute `./figuras`
+    
     - De lo contrario
     
         Ejecute `./figuras [nombre del archivo]`
 
-
 Contribución
 ----------
 
-- [Issue Tracker](https://github.com/valva-ro/trabajoPractico2Ahorcado/issues)
-- [Source Code](https://github.com/valva-ro/trabajoPractico2Ahorcado)
+- [Issue Tracker](https://github.com/valva-ro/trabajoPractico3Figuras/issues)
+- [Source Code](https://github.com/valva-ro/trabajoPractico3Figuras)
 
 
 Soporte
