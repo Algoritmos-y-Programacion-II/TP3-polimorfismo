@@ -1,3 +1,0 @@
-/home/valentina/Documentos/Algo II/trabajoPractico3Figuras/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/valentina/Documentos/Algo II/trabajoPractico3Figuras/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/valentina/Documentos/Algo II/trabajoPractico3Figuras/cmake-build-debug/CMakeFiles/trabajoPractico3Figuras.dir
