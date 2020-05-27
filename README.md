@@ -1,1 +1,0 @@
-# trabajoPractico3Figuras
