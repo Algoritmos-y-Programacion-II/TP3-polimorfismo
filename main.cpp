@@ -1,5 +1,3 @@
-#include <iostream>
-
 #include "Menu.h"
 
 int main(int argc, char* argv[]) {
@@ -28,22 +26,6 @@ int main(int argc, char* argv[]) {
     } while (menu.obtenerOpcion() != SALIR);
 
     menu.mostrarDespedida();
-/*
-  PROBANDO POLIMORFISMO
 
-    Figura* figura;
-    Rectangulo rectangulo(10, 4);
-    Triangulo triangulo(10, 4, 7, 7);
-    Circulo circulo(10);
-
-    figura = &rectangulo;
-    cout << "Area rectangulo: " << figura->obtenerArea() << "\n";
-
-    figura = &triangulo;
-    cout << "Area triangulo: " << figura->obtenerArea() << "\n";
-
-    figura = &circulo;
-    cout << "Area circulo: " << figura->obtenerArea() << "\n";
-*/
     return 0;
 }

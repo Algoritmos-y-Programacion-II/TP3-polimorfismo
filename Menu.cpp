@@ -138,6 +138,6 @@ void Menu:: mostrarSupMin() {
         if (minSup.obtenerArea() > listaFiguras.obtenerDato(i).obtenerArea())
             minSup = listaFiguras.obtenerDato(i);
     }
-    cout << "Mayor superficie: \n" << minSup <<
+    cout << "Menor superficie: \n" << minSup <<
          "           Area: " << minSup.obtenerArea() << "\n\n";
 }
