@@ -35,7 +35,7 @@ class Nodo {
         Nodo* obtenerSiguiente();
 
         // Otros metodos
-        void mostrarDato();
+        void mostrarNodo();
 };
 
 

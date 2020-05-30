@@ -31,7 +31,7 @@ Dato Nodo:: obtenerDato() {
 }
 // -------------------->
 
-void Nodo:: mostrarDato() {
+void Nodo:: mostrarNodo() {
     cout << "----------------------------------------------------------------\n";
     cout << "Nodo ->   Dato: " << dato << "   Dirección: " << this << "   Siguiente: " << pSig << "\n";
     cout << "----------------------------------------------------------------\n\n";

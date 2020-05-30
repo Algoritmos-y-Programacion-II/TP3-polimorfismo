@@ -102,17 +102,13 @@ void Menu:: bajaFigura() {
 }
 
 void Menu:: agregarFigura() {
-    Figura* figura;
-    Rectangulo rectangulo;
-    Triangulo triangulo;
-    Circulo circulo;
-
+    char tipoFigura;
     cout << "Ingrese el tipo de figura que desea\n"
             "   - (R)ectangulo\n"
             "   - (T)riangulo\n"
             "   - (C)irculo\n";
-
-    //TODO
+    cin >> tipoFigura;
+    listaFiguras.agregarDato(tipoFigura);
 }
 
 void Menu:: mostrarFiguras() {

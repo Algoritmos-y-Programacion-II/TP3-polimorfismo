@@ -72,6 +72,49 @@ void Lista:: agregarEnPosicion(Dato datoOut, int posicion) {
     elementos++;
 }
 
+void Lista:: agregarDato(char tipoDato) {
+    Figura* figura;
+    double base, altura, radio;
+    switch(tipoDato) {
+        case RECTANGULO: {
+            cout << "   Ingrese base: ";
+            cin >> base;
+            cout << "\n";
+            cout << "   Ingrese altura: ";
+            cin >> altura;
+            cout << "\n";
+            Rectangulo rectangulo(base, altura);
+            figura = &rectangulo;
+            break;
+        }
+        case TRIANGULO: {
+            cout << "   Ingrese base: ";
+            cin >> base;
+            cout << "\n";
+            cout << "   Ingrese altura: ";
+            cin >> altura;
+            cout << "\n";
+            Triangulo triangulo(base, altura);
+            figura = &triangulo;
+            break;
+        }
+        case CIRCULO: {
+            cout << "   Ingrese radio: ";
+            cin >> radio;
+            cout << "\n";
+            Circulo circulo(radio);
+            figura = &circulo;
+            break;
+        }
+        default:
+            cout << "La letra que ingreso no es valida.\n";
+    }
+    if (tipoDato == RECTANGULO || tipoDato == TRIANGULO || tipoDato == CIRCULO) {
+        figura->asignarArea(figura->obtenerArea());
+        agregarAlPrincipio(*figura);
+    }
+}
+
 void Lista:: sacar(int posicion) {
     Nodo* borrar = primero;
 
@@ -88,10 +131,10 @@ void Lista:: sacar(int posicion) {
     elementos--;
 }
 
-void Lista:: mostrarDatos() {
+void Lista:: mostrarNodos() {
     if (!vacia()) {
         for (int i = 0; i < elementos; i++) {
-            obtenerNodo(i)->mostrarDato();
+            obtenerNodo(i)->mostrarNodo();
         }
     }
 }
