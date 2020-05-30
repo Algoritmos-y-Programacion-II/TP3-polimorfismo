@@ -3,6 +3,10 @@
 //
 
 #include "Lista.h"
+#include "Figura.h"
+#include "Rectangulo.h"
+#include "Triangulo.h"
+#include "Circulo.h"
 
 Lista:: Lista () {
     primero = 0;
@@ -46,7 +50,6 @@ void Lista:: agregarAlPrincipio(Dato datoOut) {
         primero = nuevoNodo;
     else
     {
-
         while (pAux->obtenerSiguiente() != 0)
             pAux = pAux->obtenerSiguiente();
         pAux->asignarSiguiente(nuevoNodo);
@@ -57,7 +60,7 @@ void Lista:: agregarAlPrincipio(Dato datoOut) {
 void Lista:: agregarEnPosicion(Dato datoOut, int posicion) {
     Nodo* nuevoPrimero = new Nodo(datoOut);
 
-    if (posicion == 1) {
+    if (posicion == 0) {
         nuevoPrimero->asignarSiguiente(primero);
         primero = nuevoPrimero;
     }
@@ -72,7 +75,7 @@ void Lista:: agregarEnPosicion(Dato datoOut, int posicion) {
 void Lista:: sacar(int posicion) {
     Nodo* borrar = primero;
 
-    if (posicion == 1) {
+    if (posicion == 0) {
         primero = borrar->obtenerSiguiente();
     }
 
@@ -87,30 +90,60 @@ void Lista:: sacar(int posicion) {
 
 void Lista:: mostrarDatos() {
     if (!vacia()) {
-        for (int i = 1; i < elementos; i++) {
+        for (int i = 0; i < elementos; i++) {
             obtenerNodo(i)->mostrarDato();
         }
     }
 }
 
-void Lista:: ordenar() {
-    Nodo* pAux = 0;
-    Nodo* nuevoPrimero = primero;
-    Dato dato;
+void Lista:: cargarArchivoEnLista(string nombreArchivo) {
 
-    while (!vacia()) {
+    ifstream archivoFiguras(nombreArchivo);
 
-        pAux = pAux->obtenerSiguiente();
+    char figura;
+    double base, altura, radio;
 
-        while (pAux != 0) {
+    Figura* pFigura;
 
-            if (nuevoPrimero->obtenerDato() < pAux->obtenerDato()) {
-                dato = pAux->obtenerDato();
-                pAux->asignarDato(nuevoPrimero->obtenerDato());
-                nuevoPrimero->asignarDato(dato);
+    Rectangulo rectangulo;
+    Triangulo triangulo;
+    Circulo circulo;
+
+    if (!archivoFiguras.fail()) {
+
+        while (archivoFiguras >> figura) {
+
+            switch (figura) {
+
+                case RECTANGULO:
+                    archivoFiguras >> base;
+                    archivoFiguras >> altura;
+
+                    pFigura = &rectangulo;
+                    pFigura->asignarBase(base);
+                    pFigura->asignarAltura(altura);
+                    break;
+
+                case TRIANGULO:
+                    archivoFiguras >> base;
+                    archivoFiguras >> altura;
+
+                    pFigura = &triangulo;
+                    pFigura->asignarBase(base);
+                    pFigura->asignarAltura(altura);
+                    break;
+
+                case CIRCULO:
+                    archivoFiguras >> radio;
+
+                    pFigura = &circulo;
+                    pFigura->asignarRadio(radio);
+                    break;
             }
-            pAux = pAux->obtenerSiguiente();
+            pFigura->asignarArea(pFigura->obtenerArea());
+            agregarAlPrincipio(*pFigura);
         }
-        nuevoPrimero = nuevoPrimero->obtenerSiguiente();
     }
+
+    else cout << "No se pudo abrir el archivo\n";
 }

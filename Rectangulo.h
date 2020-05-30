@@ -9,51 +9,17 @@
 
 class Rectangulo : public Figura {
 
-    // Atributos
-    private:
-        int base, altura;
-
     // Metodos
     public:
         // Descrpcion:
         // PRE:
         // POST:
-        Rectangulo(int baseOut, int alturaOut);
+        Rectangulo(double baseOut = 0, double alturaOut = 0);
 
         // Descrpcion:
         // PRE:
         // POST:
-        int obtenerBase();
-
-        // Descrpcion:
-        // PRE:
-        // POST:
-        int obtenerAltura();
-
-        // Descrpcion:
-        // PRE:
-        // POST:
-        void asignarBase(int baseOut);
-
-        // Descrpcion:
-        // PRE:
-        // POST:
-        void asignarAltura(int alturaOut);
-
-        // Descrpcion:
-        // PRE:
-        // POST:
-        void dibujar();
-
-        // Descrpcion:
-        // PRE:
-        // POST:
-        virtual float obtenerArea();
-
-        // Descrpcion:
-        // PRE:
-        // POST:
-        virtual float obtenerPerimetro();
+        virtual double obtenerArea();
 };
 
 

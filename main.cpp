@@ -1,29 +1,35 @@
 #include <iostream>
-#include <fstream>
 
-#include "Lista.h"
-#include "Figura.h"
-#include "Rectangulo.h"
-#include "Triangulo.h"
-#include "Circulo.h"
+#include "Menu.h"
 
 int main(int argc, char* argv[]) {
 
-    string archivoFiguras = "figuras.txt";
+    Menu menu;
+    string archFiguras = "figuras.txt";
 
     if (argc == 2)
-        archivoFiguras = argv[1];
+        archFiguras = argv[1];
+
     else if (argc > 2) {
         cout << "-- AVISO -- La cantidad de argumentos es incorrecta.\n"
-                "            Recuerde que si el nombre del archivo tiene espacios debe escribir todo entre comillas, "
-                "por ejemplo si el nombre es:\n"
-                "            archivo con figuras.txt\n"
-                "            en la terminal deberia escribir\n"
-                "            \"archivo con figuras.txt\"\n"
-                "-- AVISO -- Se utilizara \"figuras.txt\" como nombre del archivo.\n\n";
+                "            Se utilizara \"figuras.txt\" como nombre del archivo.\n\n";
     }
 
-    ofstream archFiguras(archivoFiguras);
+    menu.mostrarBienvenida();
+
+    cout << "Cargando datos...\n";
+    menu.cargarDatos(archFiguras);
+    cout << "Datos cargados con exito!\n\n";
+
+    do {
+        menu.mostrarMenu();
+        menu.elegirOpcion();
+        menu.abrirSubmenu();
+    } while (menu.obtenerOpcion() != SALIR);
+
+    menu.mostrarDespedida();
+/*
+  PROBANDO POLIMORFISMO
 
     Figura* figura;
     Rectangulo rectangulo(10, 4);
@@ -32,15 +38,12 @@ int main(int argc, char* argv[]) {
 
     figura = &rectangulo;
     cout << "Area rectangulo: " << figura->obtenerArea() << "\n";
-    cout  << "Perimetro rectangulo: " << figura->obtenerPerimetro() << "\n\n";
 
     figura = &triangulo;
     cout << "Area triangulo: " << figura->obtenerArea() << "\n";
-    cout  << "Perimetro triangulo: " << figura->obtenerPerimetro() << "\n\n";
 
     figura = &circulo;
     cout << "Area circulo: " << figura->obtenerArea() << "\n";
-    cout  << "Perimetro circulo: " << figura->obtenerPerimetro() << "\n\n";
-
+*/
     return 0;
 }

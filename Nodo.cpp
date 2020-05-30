@@ -3,7 +3,6 @@
 //
 
 #include "Nodo.h"
-
 #include <iostream>
 
 // Constructor con parametros
@@ -30,6 +29,7 @@ void Nodo:: asignarDato(Dato datoOut) {
 Dato Nodo:: obtenerDato() {
     return dato;
 }
+// -------------------->
 
 void Nodo:: mostrarDato() {
     cout << "----------------------------------------------------------------\n";

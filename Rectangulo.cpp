@@ -4,35 +4,12 @@
 
 #include "Rectangulo.h"
 
-Rectangulo:: Rectangulo(int baseOut, int alturaOut) {
+Rectangulo:: Rectangulo(double baseOut, double alturaOut) {
+    letraInicial = 'R';
     base = baseOut;
     altura = alturaOut;
 }
 
-int Rectangulo:: obtenerBase() {
-    return base;
-}
-
-int Rectangulo:: obtenerAltura() {
-    return altura;
-}
-
-void Rectangulo:: asignarBase(int baseOut) {
-    base = baseOut;
-}
-
-void Rectangulo:: asignarAltura(int alturaOut) {
-    altura = alturaOut;
-}
-
-void Rectangulo:: dibujar() {
-    //TODO
-}
-
-float Rectangulo:: obtenerArea() {
+double Rectangulo:: obtenerArea() {
     return base * altura;
-}
-
-float Rectangulo:: obtenerPerimetro() {
-    return 2 * (base + altura);
 }

@@ -9,53 +9,38 @@
 
 class Triangulo : public Figura {
 
-    // Atributos
-    private:
-        int base, altura, ladoIzq, ladoDer;
-
     // Metodos
     public:
 
         // Descrpcion:
         // PRE:
         // POST:
-        Triangulo(int baseOut, int alturaOut, int ladoIzqOut, int ladoDerOut);
+        Triangulo(double baseOut = 0, double alturaOut = 0);
 
         // Descrpcion:
         // PRE:
         // POST:
-        int obtenerBase();
+        double obtenerBase();
 
         // Descrpcion:
         // PRE:
         // POST:
-        int obtenerAltura();
-
-
-        // Descrpcion:
-        // PRE:
-        // POST:
-        void asignarBase(int baseOut);
+        double obtenerAltura();
 
         // Descrpcion:
         // PRE:
         // POST:
-        void asignarAltura(int alturaOut);
+        void asignarBase(double baseOut);
 
         // Descrpcion:
         // PRE:
         // POST:
-        void dibujar();
+        void asignarAltura(double alturaOut);
 
         // Descrpcion:
         // PRE:
         // POST:
-        virtual float obtenerArea();
-
-        // Descrpcion:
-        // PRE:
-        // POST:
-        virtual float obtenerPerimetro();
+        virtual double obtenerArea();
 };
 
 

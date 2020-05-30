@@ -4,26 +4,11 @@
 
 #include "Circulo.h"
 
-Circulo:: Circulo(int radioOut) {
+Circulo:: Circulo(double radioOut) {
+    letraInicial = 'C';
     radio = radioOut;
 }
 
-int Circulo:: obtenerRadio() {
-    return radio;
-}
-
-void Circulo:: asignarRadio(int radioOut) {
-    radio = radioOut;
-}
-
-void Circulo:: dibujar() {
-    //TODO
-}
-
-float Circulo:: obtenerArea() {
+double Circulo:: obtenerArea() {
     return 3.14 * radio * radio;
-}
-
-float Circulo:: obtenerPerimetro() {
-    return 2* 3.14 * radio;
 }

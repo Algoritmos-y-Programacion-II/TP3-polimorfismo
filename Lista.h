@@ -5,6 +5,7 @@
 #ifndef TRABAJOPRACTICO3FIGURAS_LISTA_H
 #define TRABAJOPRACTICO3FIGURAS_LISTA_H
 
+#include <fstream>
 #include "Nodo.h"
 
 class Lista {
@@ -34,6 +35,7 @@ class Lista {
         bool vacia();
         void mostrarDatos();
         void ordenar();
+        void cargarArchivoEnLista(string nombreArchivo);
 
     private:
         Nodo* obtenerNodo(int posicion);

@@ -9,42 +9,18 @@
 
 class Circulo : public Figura {
 
-    // Atributos
-    private:
-        int radio;
-
     // Metodos
     public:
 
         // Descrpcion:
         // PRE:
         // POST:
-        Circulo(int radioOut);
+        Circulo(double radioOut = 0);
 
         // Descrpcion:
         // PRE:
         // POST:
-        int obtenerRadio();
-
-        // Descrpcion:
-        // PRE:
-        // POST:
-        void asignarRadio(int radioOut);
-
-        // Descrpcion:
-        // PRE:
-        // POST:
-        void dibujar();
-
-        // Descrpcion:
-        // PRE:
-        // POST:
-        virtual float obtenerArea();
-
-        // Descrpcion:
-        // PRE:
-        // POST:
-        virtual float obtenerPerimetro();
+        virtual double obtenerArea();
 
 
 };

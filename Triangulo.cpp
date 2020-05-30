@@ -4,37 +4,12 @@
 
 #include "Triangulo.h"
 
-Triangulo:: Triangulo(int baseOut, int alturaOut, int ladoIzqOut, int ladoDerOut) {
+Triangulo:: Triangulo(double baseOut, double alturaOut) {
+    letraInicial = 'T';
     base = baseOut;
     altura = alturaOut;
-    ladoIzq = ladoIzqOut;
-    ladoDer  = ladoDerOut;
 }
 
-int Triangulo:: obtenerBase() {
-    return base;
-}
-
-int Triangulo:: obtenerAltura() {
-    return altura;
-}
-
-void Triangulo:: asignarBase(int baseOut) {
-    base = baseOut;
-}
-
-void Triangulo:: asignarAltura(int alturaOut) {
-    altura = alturaOut;
-}
-
-void Triangulo:: dibujar() {
-    //TODO
-}
-
-float Triangulo:: obtenerArea() {
+double Triangulo:: obtenerArea() {
     return (base * altura) / 2;
-}
-
-float Triangulo:: obtenerPerimetro() {
-    return base + ladoIzq + ladoDer;
 }

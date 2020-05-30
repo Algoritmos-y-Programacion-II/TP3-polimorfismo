@@ -5,33 +5,34 @@
 #ifndef TRABAJOPRACTICO3FIGURAS_NODO_H
 #define TRABAJOPRACTICO3FIGURAS_NODO_H
 
-using namespace std;
+#include "Figura.h"
+#include "Rectangulo.h"
+#include "Triangulo.h"
+#include "Circulo.h"
 
-typedef int Dato;
-const int NULO = 0;
+using namespace std;
+typedef Figura Dato;
 
 class Nodo {
 
     // Atributos
     private:
         Dato dato;
-        Nodo *pSig;
+        Nodo* pSig;
 
     // Metodos
     public:
 
         // Constructores
-        Nodo(Dato datoOut = NULO);
+        Nodo(Dato datoOut);
 
         // Setters
-        void asignarSiguiente(Nodo *psigOut);
-
+        void asignarSiguiente(Nodo* psigOut);
         void asignarDato(Dato datoOut);
 
         // Getters
         Dato obtenerDato();
-
-        Nodo *obtenerSiguiente();
+        Nodo* obtenerSiguiente();
 
         // Otros metodos
         void mostrarDato();
