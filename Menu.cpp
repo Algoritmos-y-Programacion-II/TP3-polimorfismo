@@ -78,24 +78,27 @@ void Menu:: abrirSubmenu() {
 
 void Menu:: obtenerFigura() {
 
-    string nombreFigura;
+    if (listaFiguras.obtenerCantidadElementos() > 0) {
+        string nombreFigura;
 
-    int posicion, min = 1, max = listaFiguras.obtenerCantidadElementos();
-    cout << "Ingrese una posicion entre " << min << " y " << max << ": ";
-    cin >> posicion;
-    cout << "\n";
+        int posicion, min = 1, max = listaFiguras.obtenerCantidadElementos();
+        cout << "Ingrese una posicion entre " << min << " y " << max << ": ";
+        cin >> posicion;
+        cout << "\n";
 
-    cout << listaFiguras.obtenerDato(posicion);
-    cout << "   Area: " << listaFiguras.obtenerDato(posicion).obtenerArea() << "\n\n";
+        cout << listaFiguras.obtenerDato(posicion - 1);
+        cout << "   Area: " << listaFiguras.obtenerDato(posicion - 1).obtenerArea() << "\n\n";
+    }
 }
 
 void Menu:: bajaFigura() {
-    //NOT WORKING PROPERLY
-    int posicion;
-    mostrarFiguras();
-    cout << "Ingrese el numero del elemento que desea dar de baja: ";
-    cin >> posicion;
-    listaFiguras.sacar(posicion-1);
+    if (listaFiguras.obtenerCantidadElementos() > 0) {
+        int posicion;
+        mostrarFiguras();
+        cout << "Ingrese el numero del elemento que desea dar de baja: ";
+        cin >> posicion;
+        listaFiguras.sacar(posicion-1);
+    }
 }
 
 void Menu:: agregarFigura() {
