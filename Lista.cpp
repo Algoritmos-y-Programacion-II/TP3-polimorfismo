@@ -16,7 +16,7 @@ Lista:: Lista () {
 Lista:: ~Lista() {
     while (!vacia())
         // Mientras queden elementos, voy siempre sacando el que este en la posicion 1
-        sacar(1);
+        sacar(0);
 }
 
 // <-------------------- Getters
@@ -30,7 +30,7 @@ int Lista:: obtenerCantidadElementos() {
 
 Nodo* Lista:: obtenerNodo(int posicion) {
     Nodo *aux = primero;
-    int i = 1;
+    int i = 0;
     while (i < posicion) {
         aux = aux->obtenerSiguiente();
         i++;
