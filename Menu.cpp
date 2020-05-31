@@ -118,19 +118,9 @@ void Menu:: mostrarFiguras() {
 }
 
 void Menu:: mostrarSupMax() {
-    Figura* maxSup = listaFiguras.obtenerDato(0);
-    for (int i = 0; i < listaFiguras.obtenerCantidadElementos(); i++) {
-        if (maxSup->obtenerArea() < listaFiguras.obtenerDato(i)->obtenerArea())
-            maxSup = listaFiguras.obtenerDato(i);
-    }
-    cout << "Mayor superficie: \n" << maxSup;
+    cout << "Mayor superficie: \n" << listaFiguras.obtenerMax();;
 }
 
 void Menu:: mostrarSupMin() {
-    Figura* minSup = listaFiguras.obtenerDato(0);
-    for (int i = 0; i < listaFiguras.obtenerCantidadElementos(); i++) {
-        if (minSup->obtenerArea() > listaFiguras.obtenerDato(i)->obtenerArea())
-            minSup = listaFiguras.obtenerDato(i);
-    }
-    cout << "Menor superficie: \n" << minSup;
+    cout << "Menor superficie: \n" << listaFiguras.obtenerMin();
 }

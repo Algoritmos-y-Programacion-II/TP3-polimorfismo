@@ -1,7 +1,7 @@
 #include "Menu.h"
 
 int main(int argc, char* argv[]) {
-/*
+
     Menu menu;
     string archFiguras = "figuras.txt";
 
@@ -26,8 +26,7 @@ int main(int argc, char* argv[]) {
     } while (menu.obtenerOpcion() != SALIR);
 
     menu.mostrarDespedida();
-*/
-
+/*
     Lista listaFiguras;
     Figura* figura;
 
@@ -49,6 +48,6 @@ int main(int argc, char* argv[]) {
     for (int i = 0; i <listaFiguras.obtenerCantidadElementos(); i++) {
         cout << i+1 << ". " << listaFiguras.obtenerDato(i);
     }
-
+*/
     return 0;
 }

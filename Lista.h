@@ -27,6 +27,8 @@ class Lista {
         // Getters
         Dato obtenerDato(int posicion);
         int obtenerCantidadElementos();
+        Dato obtenerMax();
+        Dato obtenerMin();
 
         // Otros metodos
         void agregarEnPosicion(Dato datoOut, int posicion);
@@ -35,7 +37,6 @@ class Lista {
         void sacar(int posicion);
         bool vacia();
         void mostrarNodos();
-        void ordenar();
         void cargarArchivoEnLista(string nombreArchivo);
 
     private:
