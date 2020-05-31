@@ -1,7 +1,7 @@
 #include "Menu.h"
 
 int main(int argc, char* argv[]) {
-
+/*
     Menu menu;
     string archFiguras = "figuras.txt";
 
@@ -26,6 +26,30 @@ int main(int argc, char* argv[]) {
     } while (menu.obtenerOpcion() != SALIR);
 
     menu.mostrarDespedida();
+*/
+
+    Lista listaFiguras;
+    Figura* figura;
+
+    Rectangulo rectangulo(10, 5);
+    figura = &rectangulo;
+    figura->asignarArea(figura->obtenerArea());
+    listaFiguras.agregarAlPrincipio(figura);
+
+    Triangulo triangulo(4, 3);
+    figura = &triangulo;
+    figura->asignarArea(figura->obtenerArea());
+    listaFiguras.agregarAlPrincipio(figura);
+
+    Circulo circulo(100);
+    figura = &circulo;
+    figura->asignarArea(figura->obtenerArea());
+    listaFiguras.agregarAlPrincipio(figura);
+
+    for (int i = 0; i <listaFiguras.obtenerCantidadElementos(); i++) {
+        cout << i+1 << ". " << listaFiguras.obtenerDato(i);
+    }
+
 
     return 0;
 }

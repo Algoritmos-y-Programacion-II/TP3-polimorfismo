@@ -34,6 +34,6 @@ class Figura {
         virtual double obtenerArea();
 };
 
-ostream& operator << (ostream& out, Figura const &figura);
+ostream& operator << (ostream& out, Figura* const &figura);
 
 #endif //TRABAJOPRACTICO3FIGURAS_FIGURA_H

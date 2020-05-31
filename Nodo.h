@@ -11,7 +11,7 @@
 #include "Circulo.h"
 
 using namespace std;
-typedef Figura Dato;
+typedef Figura* Dato;
 
 class Nodo {
 

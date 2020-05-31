@@ -111,7 +111,7 @@ void Lista:: agregarDato(char tipoDato) {
     }
     if (tipoDato == RECTANGULO || tipoDato == TRIANGULO || tipoDato == CIRCULO) {
         figura->asignarArea(figura->obtenerArea());
-        agregarAlPrincipio(*figura);
+        agregarAlPrincipio(figura);
     }
 }
 
@@ -184,7 +184,7 @@ void Lista:: cargarArchivoEnLista(string nombreArchivo) {
                     break;
             }
             pFigura->asignarArea(pFigura->obtenerArea());
-            agregarAlPrincipio(*pFigura);
+            agregarAlPrincipio(pFigura);
         }
     }
 

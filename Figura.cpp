@@ -51,26 +51,27 @@ double Figura:: obtenerArea() {
     return area;
 }
 
-ostream& operator << (ostream &out, Figura const &figura) {
+ostream& operator << (ostream &out, Figura* const &figura) {
 
-    switch(figura.obtenerLetraInicial()) {
+    switch(figura->obtenerLetraInicial()) {
 
         case RECTANGULO:
             out << "    La figura es: rectangulo\n";
-            out << "         Altura: " << figura.obtenerAltura() << "\n";
-            out << "           Base: " << figura.obtenerBase() << "\n";;
+            out << "         Altura: " << figura->obtenerAltura() << "\n";
+            out << "           Base: " << figura->obtenerBase() << "\n";;
             break;
 
         case TRIANGULO:
             out << "    La figura es: triangulo\n";
-            out << "         Altura: " << figura.obtenerAltura() << "\n";;
-            out << "           Base: " << figura.obtenerBase() << "\n";;
+            out << "         Altura: " << figura->obtenerAltura() << "\n";;
+            out << "           Base: " << figura->obtenerBase() << "\n";;
             break;
 
         case CIRCULO:
             out << "    La figura es: circulo\n";
-            out << "          Radio: " << figura.obtenerRadio() << "\n";;
+            out << "          Radio: " << figura->obtenerRadio() << "\n";;
             break;
     }
+    out << "           Area: " << figura->obtenerArea() << "\n\n";
     return out;
 }
