@@ -9,6 +9,13 @@ Circulo:: Circulo(double radioOut) {
     radio = radioOut;
 }
 
-double Circulo:: obtenerArea() {
+double Circulo:: calcularArea() {
     return 3.14 * radio * radio;
+}
+
+void Circulo:: mostrar() {
+    cout << "Tipo de figura:    triangulo"
+            "\n       Radio: " << radio <<
+            "\n       Area: " << calcularArea() << "\n\n";
+
 }

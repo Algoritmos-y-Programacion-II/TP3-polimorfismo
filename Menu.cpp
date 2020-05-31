@@ -87,7 +87,6 @@ void Menu:: obtenerFigura() {
         cout << "\n";
 
         cout << listaFiguras.obtenerDato(posicion - 1);
-        cout << "   Area: " << listaFiguras.obtenerDato(posicion - 1)->obtenerArea() << "\n\n";
     }
 }
 
@@ -108,7 +107,7 @@ void Menu:: agregarFigura() {
             "   - (T)riangulo\n"
             "   - (C)irculo\n";
     cin >> tipoFigura;
-    listaFiguras.agregarDato(tipoFigura);
+    listaFiguras.agregarDato(toupper(tipoFigura));
 }
 
 void Menu:: mostrarFiguras() {

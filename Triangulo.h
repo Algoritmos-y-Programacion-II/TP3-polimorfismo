@@ -8,6 +8,9 @@
 #include "Figura.h"
 
 class Triangulo : public Figura {
+    // Atributos
+    private:
+        double altura, base;
 
     // Metodos
     public:
@@ -20,27 +23,8 @@ class Triangulo : public Figura {
         // Descrpcion:
         // PRE:
         // POST:
-        double obtenerBase();
-
-        // Descrpcion:
-        // PRE:
-        // POST:
-        double obtenerAltura();
-
-        // Descrpcion:
-        // PRE:
-        // POST:
-        void asignarBase(double baseOut);
-
-        // Descrpcion:
-        // PRE:
-        // POST:
-        void asignarAltura(double alturaOut);
-
-        // Descrpcion:
-        // PRE:
-        // POST:
-        virtual double obtenerArea();
+        virtual double calcularArea();
+        virtual void mostrar();
 };
 
 

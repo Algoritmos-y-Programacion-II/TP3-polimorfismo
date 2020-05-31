@@ -8,6 +8,9 @@
 #include "Figura.h"
 
 class Circulo : public Figura {
+    //Atributos
+    private:
+        double radio;
 
     // Metodos
     public:
@@ -20,7 +23,8 @@ class Circulo : public Figura {
         // Descrpcion:
         // PRE:
         // POST:
-        virtual double obtenerArea();
+        virtual double calcularArea();
+        virtual void mostrar();
 
 
 };

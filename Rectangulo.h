@@ -8,6 +8,9 @@
 #include "Figura.h"
 
 class Rectangulo : public Figura {
+    // Atributos
+    private:
+        double altura, base;
 
     // Metodos
     public:
@@ -19,7 +22,8 @@ class Rectangulo : public Figura {
         // Descrpcion:
         // PRE:
         // POST:
-        virtual double obtenerArea();
+        virtual double calcularArea();
+        virtual void mostrar();
 };
 
 

@@ -10,6 +10,13 @@ Rectangulo:: Rectangulo(double baseOut, double alturaOut) {
     altura = alturaOut;
 }
 
-double Rectangulo:: obtenerArea() {
+double Rectangulo:: calcularArea() {
     return base * altura;
+}
+
+void Rectangulo:: mostrar() {
+    cout << "Tipo de figura:    rectangulo"
+            "\n       Altura: " << altura <<
+            "\n       Base: " << base <<
+            "\n       Area: " << calcularArea() << "\n\n";
 }

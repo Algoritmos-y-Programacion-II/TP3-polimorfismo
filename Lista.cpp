@@ -174,7 +174,9 @@ void Lista:: cargarArchivoEnLista(string nombreArchivo) {
 
     if (!archivoFiguras.fail()) {
 
-        while (archivoFiguras >> figura) {
+        while (!archivoFiguras.eof()) {
+
+            archivoFiguras >> figura;
 
             switch (figura) {
 
@@ -182,25 +184,28 @@ void Lista:: cargarArchivoEnLista(string nombreArchivo) {
                     archivoFiguras >> base;
                     archivoFiguras >> altura;
 
+                    rectangulo.asignarBase(base);
+                    rectangulo.asignarAltura(altura);
+
                     pFigura = &rectangulo;
-                    pFigura->asignarBase(base);
-                    pFigura->asignarAltura(altura);
                     break;
 
                 case TRIANGULO:
                     archivoFiguras >> base;
                     archivoFiguras >> altura;
 
+                    triangulo.asignarBase(base);
+                    triangulo.asignarAltura(altura);
+
                     pFigura = &triangulo;
-                    pFigura->asignarBase(base);
-                    pFigura->asignarAltura(altura);
                     break;
 
                 case CIRCULO:
                     archivoFiguras >> radio;
 
+                    circulo.asignarRadio(radio);
+
                     pFigura = &circulo;
-                    pFigura->asignarRadio(radio);
                     break;
             }
             pFigura->asignarArea(pFigura->obtenerArea());

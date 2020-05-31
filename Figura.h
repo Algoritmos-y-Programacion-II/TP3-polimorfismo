@@ -17,23 +17,15 @@ class Figura {
     // Atributos
     protected:
         char letraInicial;
-        double area, base, altura, radio;
+        double area;
 
     // Metodos
     public:
-        Figura(double areaOut = 0, double baseOut = 0, double alturaOut = 0, double radioOut = 0);
+        Figura(double areaOut = 0);
         void asignarLetraInicial(char letraInicialOut);
-        void asignarBase(double baseOut);
-        void asignarAltura(double alturaOut);
-        void asignarRadio(double radioOut);
-        void asignarArea(double areaOut);
-        char obtenerLetraInicial() const;
-        double obtenerBase() const;
-        double obtenerAltura() const;
-        double obtenerRadio() const;
-        virtual double obtenerArea();
+        char obtenerLetraInicial();
+        virtual double calcularArea();
+        virtual void mostrar();
 };
-
-ostream& operator << (ostream& out, Figura* const &figura);
 
 #endif //TRABAJOPRACTICO3FIGURAS_FIGURA_H

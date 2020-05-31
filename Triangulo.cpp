@@ -10,6 +10,13 @@ Triangulo:: Triangulo(double baseOut, double alturaOut) {
     altura = alturaOut;
 }
 
-double Triangulo:: obtenerArea() {
+double Triangulo:: calcularArea() {
     return (base * altura) / 2;
+}
+
+void Triangulo:: mostrar() {
+    cout << "Tipo de figura:    triangulo"
+            "\n       Altura: " << altura <<
+            "\n       Base: " << base <<
+            "\n       Area: " << calcularArea() << "\n\n";
 }

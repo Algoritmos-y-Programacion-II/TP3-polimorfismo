@@ -19,12 +19,26 @@ int main(int argc, char* argv[]) {
     menu.cargarDatos(archFiguras);
     cout << "Datos cargados con exito!\n\n";
 
+    Lista listaMain = menu.obtenerLista();
+
+    Figura* dato = listaMain.obtenerDato(2);
+
+    //cout << dato->obtenerLetraInicial() << endl;
+    cout << dato->obtenerArea() << endl;
+    cout << dato->obtenerAltura() << endl;
+    cout << dato->obtenerBase() << endl;
+
+    /*for(int i = 0; i < listaMain.obtenerCantidadElementos(); i++) {
+        cout << listaMain.obtenerDato(i);
+    }*/
+
+/*
     do {
         menu.mostrarMenu();
         menu.elegirOpcion();
         menu.abrirSubmenu();
     } while (menu.obtenerOpcion() != SALIR);
-
+*/
     menu.mostrarDespedida();
 /*
     Lista listaFiguras;
