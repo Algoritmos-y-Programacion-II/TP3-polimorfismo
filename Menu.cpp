@@ -113,8 +113,7 @@ void Menu:: agregarFigura() {
 
 void Menu:: mostrarFiguras() {
     for (int i = 0; i < listaFiguras.obtenerCantidadElementos(); i ++) {
-        cout << i+1 << ". " << listaFiguras.obtenerDato(i) <<
-                "           Area: " << listaFiguras.obtenerDato(i)->obtenerArea() << "\n\n";
+        cout << i+1 << ". " << listaFiguras.obtenerDato(i);
     }
 }
 
@@ -124,8 +123,7 @@ void Menu:: mostrarSupMax() {
         if (maxSup->obtenerArea() < listaFiguras.obtenerDato(i)->obtenerArea())
             maxSup = listaFiguras.obtenerDato(i);
     }
-    cout << "Mayor superficie: \n" << maxSup <<
-            "           Area: " << maxSup->obtenerArea() << "\n\n";
+    cout << "Mayor superficie: \n" << maxSup;
 }
 
 void Menu:: mostrarSupMin() {
@@ -134,6 +132,5 @@ void Menu:: mostrarSupMin() {
         if (minSup->obtenerArea() > listaFiguras.obtenerDato(i)->obtenerArea())
             minSup = listaFiguras.obtenerDato(i);
     }
-    cout << "Menor superficie: \n" << minSup <<
-         "           Area: " << minSup->obtenerArea() << "\n\n";
+    cout << "Menor superficie: \n" << minSup;
 }

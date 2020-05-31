@@ -50,6 +50,5 @@ int main(int argc, char* argv[]) {
         cout << i+1 << ". " << listaFiguras.obtenerDato(i);
     }
 
-
     return 0;
 }
