@@ -25,7 +25,7 @@ class Menu {
 
         void mostrarMenu();
         void elegirOpcion();
-        void validarRangoOpcion(int min = MIN, int max = MAX);
+        void validarRango(int &num, int min = MIN, int max = MAX);
         void abrirSubmenu();
         void obtenerFigura();
         void bajaFigura();

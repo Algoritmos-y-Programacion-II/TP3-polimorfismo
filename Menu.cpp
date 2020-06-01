@@ -49,17 +49,18 @@ void Menu:: elegirOpcion() {
     cout << "\n   Ingrese la opcion que desea: ";
     cin >> opcion;
     cout << "\n";
-    validarRangoOpcion();
+    validarRango(opcion);
 }
 
-void Menu:: validarRangoOpcion(int min, int max) {
-    while (opcion < min || opcion > max) {
-        cout << "La opcion que eligio esta fuera de rango, por favor reingrese: ";
-        cin >> opcion;
+void Menu:: validarRango(int &num, int min, int max) {
+    while (num < min || num > max) {
+        cout << "El numero que ingreso esta fuera de rango, por favor reingrese: ";
+        cin >> num;
     }
 }
 
 void Menu:: abrirSubmenu() {
+
     switch(opcion) {
 
         case OBTENER_FIGURA: obtenerFigura(); break;
@@ -85,7 +86,7 @@ void Menu:: obtenerFigura() {
         cout << "Ingrese una posicion entre " << min << " y " << max << ": ";
         cin >> posicion;
         cout << "\n";
-
+        validarRango(posicion, min, max);
         listaFiguras.obtenerDato(posicion - 1)->mostrar();
     }
 }
@@ -96,6 +97,7 @@ void Menu:: bajaFigura() {
         mostrarFiguras();
         cout << "Ingrese el numero del elemento que desea dar de baja: ";
         cin >> posicion;
+        validarRango(posicion, 0, listaFiguras.obtenerCantidadElementos());
         listaFiguras.sacar(posicion - 1);
     }
 }
@@ -118,11 +120,11 @@ void Menu:: mostrarFiguras() {
 }
 
 void Menu:: mostrarSupMax() {
-    cout << "Mayor superficie: \n";
+    cout << "- - - - Mayor superficie - - - -\n";
     listaFiguras.obtenerMax()->mostrar();;
 }
 
 void Menu:: mostrarSupMin() {
-    cout << "Menor superficie: \n";
+    cout << "- - - - Menor superficie: - - - -\n";
     listaFiguras.obtenerMin()->mostrar();
 }
