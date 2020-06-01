@@ -93,7 +93,7 @@ void Lista:: agregarEnPosicion(Dato datoOut, int posicion) {
 }
 
 void Lista:: agregarDato(char tipoDato) {
-    Figura* figura;
+    Dato dato;
     double base, altura, radio;
     switch(tipoDato) {
         case RECTANGULO: {
@@ -103,8 +103,7 @@ void Lista:: agregarDato(char tipoDato) {
             cout << "   Ingrese altura: ";
             cin >> altura;
             cout << "\n";
-            Rectangulo rectangulo(base, altura);
-            figura = &rectangulo;
+            dato = new Rectangulo(base, altura);
             break;
         }
         case TRIANGULO: {
@@ -114,24 +113,22 @@ void Lista:: agregarDato(char tipoDato) {
             cout << "   Ingrese altura: ";
             cin >> altura;
             cout << "\n";
-            Triangulo triangulo(base, altura);
-            figura = &triangulo;
+            dato = new Triangulo(base, altura);
             break;
         }
         case CIRCULO: {
             cout << "   Ingrese radio: ";
             cin >> radio;
             cout << "\n";
-            Circulo circulo(radio);
-            figura = &circulo;
+            dato = new Circulo(radio);
             break;
         }
         default:
             cout << "La letra que ingreso no es valida.\n";
     }
     if (tipoDato == RECTANGULO || tipoDato == TRIANGULO || tipoDato == CIRCULO) {
-        figura->asignarArea(figura->obtenerArea());
-        agregarAlPrincipio(figura);
+        dato->calcularArea();
+        agregarAlPrincipio(dato);
     }
 }
 
@@ -166,52 +163,34 @@ void Lista:: cargarArchivoEnLista(string nombreArchivo) {
     char figura;
     double base, altura, radio;
 
-    Figura* pFigura;
-
-    Rectangulo rectangulo;
-    Triangulo triangulo;
-    Circulo circulo;
+    Dato dato;
 
     if (!archivoFiguras.fail()) {
 
-        while (!archivoFiguras.eof()) {
-
-            archivoFiguras >> figura;
+        while (archivoFiguras >> figura) {
 
             switch (figura) {
 
                 case RECTANGULO:
                     archivoFiguras >> base;
                     archivoFiguras >> altura;
-
-                    rectangulo.asignarBase(base);
-                    rectangulo.asignarAltura(altura);
-
-                    pFigura = &rectangulo;
+                    dato = new Rectangulo(base, altura);
                     break;
 
                 case TRIANGULO:
                     archivoFiguras >> base;
                     archivoFiguras >> altura;
-
-                    triangulo.asignarBase(base);
-                    triangulo.asignarAltura(altura);
-
-                    pFigura = &triangulo;
+                    dato = new Triangulo(base, altura);
                     break;
 
                 case CIRCULO:
                     archivoFiguras >> radio;
+                    dato = new Circulo(radio);
 
-                    circulo.asignarRadio(radio);
-
-                    pFigura = &circulo;
                     break;
             }
-            pFigura->asignarArea(pFigura->obtenerArea());
-            agregarAlPrincipio(pFigura);
+            dato->calcularArea();
+            agregarAlPrincipio(dato);
         }
-    }
-
-    else cout << "No se pudo abrir el archivo\n";
+    } else cout << "No se pudo abrir el archivo\n";
 }

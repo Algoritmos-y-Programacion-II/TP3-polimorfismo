@@ -14,18 +14,11 @@ const char CIRCULO = 'C';
 
 class Figura {
 
-    // Atributos
-    protected:
-        char letraInicial;
-        double area;
-
     // Metodos
     public:
-        Figura(double areaOut = 0);
-        void asignarLetraInicial(char letraInicialOut);
-        char obtenerLetraInicial();
-        virtual double calcularArea();
-        virtual void mostrar();
+        virtual void calcularArea() = 0;
+        virtual void mostrar() = 0;
+        virtual double obtenerArea() = 0;
 };
 
 #endif //TRABAJOPRACTICO3FIGURAS_FIGURA_H

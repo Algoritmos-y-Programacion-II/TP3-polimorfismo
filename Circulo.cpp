@@ -5,17 +5,20 @@
 #include "Circulo.h"
 
 Circulo:: Circulo(double radioOut) {
-    letraInicial = 'C';
     radio = radioOut;
 }
 
-double Circulo:: calcularArea() {
-    return 3.14 * radio * radio;
+void Circulo:: calcularArea() {
+    area = 3.14 * radio * radio;
+}
+
+double Circulo:: obtenerArea() {
+    return area;
 }
 
 void Circulo:: mostrar() {
-    cout << "Tipo de figura:    triangulo"
+    cout << "Tipo de figura:    circulo"
             "\n       Radio: " << radio <<
-            "\n       Area: " << calcularArea() << "\n\n";
+            "\n       Area: " << area << "\n\n";
 
 }

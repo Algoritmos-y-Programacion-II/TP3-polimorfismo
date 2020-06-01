@@ -5,18 +5,21 @@
 #include "Triangulo.h"
 
 Triangulo:: Triangulo(double baseOut, double alturaOut) {
-    letraInicial = 'T';
     base = baseOut;
     altura = alturaOut;
 }
 
-double Triangulo:: calcularArea() {
-    return (base * altura) / 2;
+void Triangulo:: calcularArea() {
+    area = (base * altura) / 2;
+}
+
+double Triangulo:: obtenerArea() {
+    return area;
 }
 
 void Triangulo:: mostrar() {
     cout << "Tipo de figura:    triangulo"
             "\n       Altura: " << altura <<
             "\n       Base: " << base <<
-            "\n       Area: " << calcularArea() << "\n\n";
+            "\n       Area: " << area << "\n\n";
 }

@@ -10,7 +10,7 @@
 class Circulo : public Figura {
     //Atributos
     private:
-        double radio;
+        double radio, area;
 
     // Metodos
     public:
@@ -23,10 +23,9 @@ class Circulo : public Figura {
         // Descrpcion:
         // PRE:
         // POST:
-        virtual double calcularArea();
+        virtual void calcularArea();
         virtual void mostrar();
-
-
+        virtual double obtenerArea();
 };
 
 

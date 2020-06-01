@@ -19,49 +19,33 @@ int main(int argc, char* argv[]) {
     menu.cargarDatos(archFiguras);
     cout << "Datos cargados con exito!\n\n";
 
-    Lista listaMain = menu.obtenerLista();
-
-    Figura* dato = listaMain.obtenerDato(2);
-
-    //cout << dato->obtenerLetraInicial() << endl;
-    cout << dato->obtenerArea() << endl;
-    cout << dato->obtenerAltura() << endl;
-    cout << dato->obtenerBase() << endl;
-
-    /*for(int i = 0; i < listaMain.obtenerCantidadElementos(); i++) {
-        cout << listaMain.obtenerDato(i);
-    }*/
-
-/*
     do {
         menu.mostrarMenu();
         menu.elegirOpcion();
         menu.abrirSubmenu();
     } while (menu.obtenerOpcion() != SALIR);
-*/
+
     menu.mostrarDespedida();
-/*
+
+    /*
     Lista listaFiguras;
+
     Figura* figura;
 
     Rectangulo rectangulo(10, 5);
+    rectangulo.calcularArea();
     figura = &rectangulo;
-    figura->asignarArea(figura->obtenerArea());
     listaFiguras.agregarAlPrincipio(figura);
 
     Triangulo triangulo(4, 3);
+    triangulo.calcularArea();
     figura = &triangulo;
-    figura->asignarArea(figura->obtenerArea());
     listaFiguras.agregarAlPrincipio(figura);
 
     Circulo circulo(100);
+    circulo.calcularArea();
     figura = &circulo;
-    figura->asignarArea(figura->obtenerArea());
     listaFiguras.agregarAlPrincipio(figura);
-
-    for (int i = 0; i <listaFiguras.obtenerCantidadElementos(); i++) {
-        cout << i+1 << ". " << listaFiguras.obtenerDato(i);
-    }
-*/
+    */
     return 0;
 }

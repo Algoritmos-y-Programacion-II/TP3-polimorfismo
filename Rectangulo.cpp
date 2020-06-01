@@ -5,18 +5,21 @@
 #include "Rectangulo.h"
 
 Rectangulo:: Rectangulo(double baseOut, double alturaOut) {
-    letraInicial = 'R';
     base = baseOut;
     altura = alturaOut;
 }
 
-double Rectangulo:: calcularArea() {
-    return base * altura;
+void Rectangulo:: calcularArea() {
+    area = base * altura;
+}
+
+double Rectangulo:: obtenerArea() {
+    return area;
 }
 
 void Rectangulo:: mostrar() {
     cout << "Tipo de figura:    rectangulo"
             "\n       Altura: " << altura <<
             "\n       Base: " << base <<
-            "\n       Area: " << calcularArea() << "\n\n";
+            "\n       Area: " << area << "\n\n";
 }

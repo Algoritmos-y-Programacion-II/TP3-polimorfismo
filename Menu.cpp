@@ -86,7 +86,7 @@ void Menu:: obtenerFigura() {
         cin >> posicion;
         cout << "\n";
 
-        cout << listaFiguras.obtenerDato(posicion - 1);
+        listaFiguras.obtenerDato(posicion - 1)->mostrar();
     }
 }
 
@@ -96,7 +96,7 @@ void Menu:: bajaFigura() {
         mostrarFiguras();
         cout << "Ingrese el numero del elemento que desea dar de baja: ";
         cin >> posicion;
-        listaFiguras.sacar(posicion-1);
+        listaFiguras.sacar(posicion - 1);
     }
 }
 
@@ -112,14 +112,17 @@ void Menu:: agregarFigura() {
 
 void Menu:: mostrarFiguras() {
     for (int i = 0; i < listaFiguras.obtenerCantidadElementos(); i ++) {
-        cout << i+1 << ". " << listaFiguras.obtenerDato(i);
+        cout << i+1 << ". ";
+        listaFiguras.obtenerDato(i)->mostrar();
     }
 }
 
 void Menu:: mostrarSupMax() {
-    cout << "Mayor superficie: \n" << listaFiguras.obtenerMax();;
+    cout << "Mayor superficie: \n";
+    listaFiguras.obtenerMax()->mostrar();;
 }
 
 void Menu:: mostrarSupMin() {
-    cout << "Menor superficie: \n" << listaFiguras.obtenerMin();
+    cout << "Menor superficie: \n";
+    listaFiguras.obtenerMin()->mostrar();
 }
