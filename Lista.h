@@ -33,7 +33,6 @@ class Lista {
         // Otros metodos
         void agregarEnPosicion(Dato datoOut, int posicion);
         void agregarAlPrincipio(Dato datoOut);
-        void agregarDato(char tipoDato);
         void sacar(int posicion);
         bool vacia();
         void mostrarNodos();

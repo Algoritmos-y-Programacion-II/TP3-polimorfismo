@@ -33,6 +33,9 @@ class Menu {
         void mostrarFiguras();
         void mostrarSupMax();
         void mostrarSupMin();
+        void agregarRectangulo();
+        void agregarTriangulo();
+        void agregarCirculo();
 };
 
 

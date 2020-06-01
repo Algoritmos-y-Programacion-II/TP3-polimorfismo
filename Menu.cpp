@@ -109,7 +109,22 @@ void Menu:: agregarFigura() {
             "   - (T)riangulo\n"
             "   - (C)irculo\n";
     cin >> tipoFigura;
-    listaFiguras.agregarDato(toupper(tipoFigura));
+
+    switch(toupper(tipoFigura)) {
+        case RECTANGULO:
+            agregarRectangulo();
+            break;
+
+        case TRIANGULO:
+            agregarTriangulo();
+            break;
+
+        case CIRCULO:
+            agregarCirculo();
+            break;
+        default:
+            cout << "La letra que ingreso no es valida.\n";
+    }
 }
 
 void Menu:: mostrarFiguras() {
@@ -127,4 +142,44 @@ void Menu:: mostrarSupMax() {
 void Menu:: mostrarSupMin() {
     cout << "- - - - Menor superficie: - - - -\n";
     listaFiguras.obtenerMin()->mostrar();
+}
+
+
+void Menu:: agregarRectangulo() {
+    double base, altura;
+    Figura* figura;
+    cout << "   Ingrese base: ";
+    cin >> base;
+    cout << "\n";
+    cout << "   Ingrese altura: ";
+    cin >> altura;
+    cout << "\n";
+    figura = new Rectangulo(base, altura);
+    figura->calcularArea();
+    listaFiguras.agregarAlPrincipio(figura);
+}
+
+void Menu:: agregarTriangulo() {
+    double base, altura;
+    Figura* figura;
+    cout << "   Ingrese base: ";
+    cin >> base;
+    cout << "\n";
+    cout << "   Ingrese altura: ";
+    cin >> altura;
+    cout << "\n";
+    figura = new Triangulo(base, altura);
+    figura->calcularArea();
+    listaFiguras.agregarAlPrincipio(figura);
+}
+
+void Menu:: agregarCirculo() {
+    double radio;
+    Figura* figura;
+    cout << "   Ingrese radio: ";
+    cin >> radio;
+    cout << "\n";
+    figura = new Circulo(radio);
+    figura->calcularArea();
+    listaFiguras.agregarAlPrincipio(figura);
 }
