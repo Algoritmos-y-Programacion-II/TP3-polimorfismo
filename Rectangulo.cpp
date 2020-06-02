@@ -18,8 +18,8 @@ double Rectangulo:: obtenerArea() {
 }
 
 void Rectangulo:: mostrar() {
-    cout << "Tipo de figura:    rectangulo"
-            "\n       Altura: " << altura <<
-            "\n       Base: " << base <<
-            "\n       Area: " << area << "\n\n";
+    cout << "   Rectangulo"
+            "\n           Altura: " << altura <<
+            "\n           Base: " << base <<
+            "\n           Area: " << area << "\n";
 }

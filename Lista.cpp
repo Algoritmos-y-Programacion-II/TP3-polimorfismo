@@ -39,20 +39,18 @@ Nodo* Lista:: obtenerNodo(int posicion) {
 }
 
 Dato Lista:: obtenerMax() {
-    //TODO sobrecargar operador <
     Dato max = obtenerDato(0);
     for (int i = 0; i < elementos; i++) {
-        if (max->obtenerArea() < obtenerDato(i)->obtenerArea())
+        if (max > obtenerDato(i))
             max = obtenerDato(i);
     }
     return max;
 }
 
 Dato Lista:: obtenerMin() {
-    //TODO sobrecargar operador >
     Dato min = obtenerDato(0);
     for (int i = 0; i < elementos; i++) {
-        if (min->obtenerArea() < obtenerDato(i)->obtenerArea())
+        if (min < obtenerDato(i))
             min = obtenerDato(i);
     }
     return min;

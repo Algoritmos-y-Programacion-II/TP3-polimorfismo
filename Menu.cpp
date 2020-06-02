@@ -131,17 +131,20 @@ void Menu:: mostrarFiguras() {
     for (int i = 0; i < listaFiguras.obtenerCantidadElementos(); i ++) {
         cout << i+1 << ". ";
         listaFiguras.obtenerDato(i)->mostrar();
+        cout << "\n";
     }
 }
 
 void Menu:: mostrarSupMax() {
-    cout << "- - - - Mayor superficie - - - -\n";
+    cout << "- - - - Mayor  superficie - - - -\n";
     listaFiguras.obtenerMax()->mostrar();;
+    cout << "- - - - - - - - - - - - - - - - -\n";
 }
 
 void Menu:: mostrarSupMin() {
-    cout << "- - - - Menor superficie: - - - -\n";
+    cout << "- - - - Menor  superficie - - - -\n";
     listaFiguras.obtenerMin()->mostrar();
+    cout << "- - - - - - - - - - - - - - - - -\n";
 }
 
 

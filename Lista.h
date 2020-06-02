@@ -43,4 +43,6 @@ class Lista {
 };
 
 
+
+
 #endif //TRABAJOPRACTICO3FIGURAS_LISTA_H

@@ -17,8 +17,8 @@ double Circulo:: obtenerArea() {
 }
 
 void Circulo:: mostrar() {
-    cout << "Tipo de figura:    circulo"
-            "\n       Radio: " << radio <<
-            "\n       Area: " << area << "\n\n";
+    cout << "  Circulo"
+            "\n           Radio: " << radio <<
+            "\n           Area: " << area << "\n";
 
 }

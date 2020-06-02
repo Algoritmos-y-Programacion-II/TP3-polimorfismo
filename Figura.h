@@ -19,6 +19,8 @@ class Figura {
         virtual void calcularArea() = 0;
         virtual void mostrar() = 0;
         virtual double obtenerArea() = 0;
+        bool operator < (Figura &figura);
+        bool operator > (Figura &figura);
 };
 
 #endif //TRABAJOPRACTICO3FIGURAS_FIGURA_H
