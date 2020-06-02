@@ -48,27 +48,23 @@ void Menu:: cargarDatos(string archFiguras) {
                 case RECTANGULO:
                     archivoFiguras >> base;
                     archivoFiguras >> altura;
-                    dato = new Rectangulo(base, altura); // Leak definetly lost
-                    cout << "Dato perdido: " << dato << endl;
+                    dato = new Rectangulo(base, altura);
                     break;
 
                 case TRIANGULO:
                     archivoFiguras >> base;
                     archivoFiguras >> altura;
-                    dato = new Triangulo(base, altura); // Leak definetly lost
-                    cout << "Dato perdido: " << dato << endl;
+                    dato = new Triangulo(base, altura);
                     break;
 
                 case CIRCULO:
                     archivoFiguras >> radio;
-                    dato = new Circulo(radio); // Leak definetly lost
-                    cout << "Dato perdido: " << dato << endl;
+                    dato = new Circulo(radio);
                     break;
             }
             dato->calcularArea();
             listaFiguras.agregarAlPrincipio(dato);
         }
-        listaFiguras.mostrarNodos();
     } else cout << "No se pudo abrir el archivo\n";
 }
 
