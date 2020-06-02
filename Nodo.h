@@ -6,11 +6,7 @@
 #define TRABAJOPRACTICO3FIGURAS_NODO_H
 
 #include "Figura.h"
-#include "Rectangulo.h"
-#include "Triangulo.h"
-#include "Circulo.h"
 
-using namespace std;
 typedef Figura* Dato;
 
 class Nodo {

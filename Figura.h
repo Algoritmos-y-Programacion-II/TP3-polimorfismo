@@ -5,13 +5,6 @@
 #ifndef TRABAJOPRACTICO3FIGURAS_FIGURA_H
 #define TRABAJOPRACTICO3FIGURAS_FIGURA_H
 
-#include <iostream>
-using namespace std;
-
-const char RECTANGULO = 'R';
-const char TRIANGULO = 'T';
-const char CIRCULO = 'C';
-
 class Figura {
 
     // Metodos

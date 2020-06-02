@@ -3,10 +3,6 @@
 //
 
 #include "Lista.h"
-#include "Figura.h"
-#include "Rectangulo.h"
-#include "Triangulo.h"
-#include "Circulo.h"
 
 Lista:: Lista () {
     primero = 0;

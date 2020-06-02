@@ -5,6 +5,8 @@
 #include "Nodo.h"
 #include <iostream>
 
+using namespace std;
+
 // Constructor con parametros
 Nodo:: Nodo(Dato datoOut) {
     dato = datoOut;

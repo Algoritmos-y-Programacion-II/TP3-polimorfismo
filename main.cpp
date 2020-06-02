@@ -1,4 +1,11 @@
+/*
+  75.41/95.15: Algoritmos y Programacion II - Catedra Juarez - 1°C 2020
+  Trabajo Practico Individual N3: Lista Polimorfica de Figuras
+  Hecho por Valentina Varela Rodriguez - 105374
+*/
+
 #include "Menu.h"
+#include <iostream>
 
 int main(int argc, char* argv[]) {
 

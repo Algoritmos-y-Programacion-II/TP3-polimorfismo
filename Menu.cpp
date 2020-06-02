@@ -4,9 +4,8 @@
 
 #include "Menu.h"
 #include "Lista.h"
-#include <iostream>
 
-using namespace std;
+#include <iostream>
 
 const int OBTENER_FIGURA = 1;
 const int BAJA = 2;
@@ -14,6 +13,10 @@ const int ALTA = 3;
 const int MOSTRAR = 4;
 const int SUP_MAX = 5;
 const int SUP_MIN = 6;
+
+const char RECTANGULO = 'R';
+const char TRIANGULO = 'T';
+const char CIRCULO = 'C';
 
 int Menu:: obtenerOpcion() {
     return opcion;

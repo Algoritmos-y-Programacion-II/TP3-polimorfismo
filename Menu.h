@@ -7,6 +7,8 @@
 
 #include "Lista.h"
 
+using namespace std;
+
 const int SALIR = 0;
 const int MIN = SALIR;
 const int MAX = 6;
