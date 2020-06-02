@@ -16,25 +16,52 @@ class Lista {
         int elementos;
 
     // Metodos
-
     public:
-        // Constructor
+
+        // TODO agregar comentarios
+
+        // PRE: -
+        // POST: Crea una lista con 0 elementos
         Lista();
 
-        // Destructor
+        // PRE: -
+        // POST: Libera la memoria que ocupaba la lista
         ~Lista();
 
-        // Getters
+        // PRE: -
+        // POST:
         Dato obtenerDato(int posicion);
+
+        // PRE: -
+        // POST:
         int obtenerCantidadElementos();
+
+        // PRE: -
+        // POST:
         Dato obtenerMax();
+
+        // PRE: -
+        // POST:
         Dato obtenerMin();
 
-        // Otros metodos
+        // PRE: -
+        // POST:
         void agregarEnPosicion(Dato datoOut, int posicion);
+
+        // PRE: -
+        // POST:
         void agregarAlPrincipio(Dato datoOut);
+
+        // PRE: -
+        // POST:
         void sacar(int posicion);
+
+        // PRE: -
+        // POST:
         bool vacia();
+
+        // PRE: -
+        // POST:
         void mostrarNodos();
 
     private:

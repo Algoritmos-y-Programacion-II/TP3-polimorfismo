@@ -19,18 +19,30 @@ class Nodo {
     // Metodos
     public:
 
-        // Constructores
+        // TODO agregar comentarios
+        
+        // PRE: -
+        // POST:
         Nodo(Dato datoOut);
 
-        // Setters
+        // PRE: -
+        // POST:
         void asignarSiguiente(Nodo* psigOut);
+
+        // PRE: -
+        // POST:
         void asignarDato(Dato datoOut);
 
-        // Getters
+        // PRE: -
+        // POST:
         Dato obtenerDato();
+
+        // PRE: -
+        // POST:
         Nodo* obtenerSiguiente();
 
-        // Otros metodos
+        // PRE: -
+        // POST:
         void mostrarNodo();
 };
 
