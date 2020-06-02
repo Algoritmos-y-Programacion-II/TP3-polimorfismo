@@ -20,7 +20,7 @@ class Nodo {
     public:
 
         // TODO agregar comentarios
-        
+
         // PRE: -
         // POST:
         Nodo(Dato datoOut);
