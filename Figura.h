@@ -12,7 +12,13 @@ class Figura {
         virtual void calcularArea() = 0;
         virtual void mostrar() = 0;
         virtual double obtenerArea() = 0;
+
+        // PRE: figura debe ser un objeto valido
+        // POST: Sobrecarga el operador < comparando el area de la figura
         bool operator < (Figura &figura);
+
+        // PRE: figura debe ser un objeto valido
+        // POST: Sobrecarga el operador > comparando el area de la figura
         bool operator > (Figura &figura);
 };
 
