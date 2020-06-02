@@ -49,22 +49,26 @@ void Menu:: cargarDatos(string archFiguras) {
                     archivoFiguras >> base;
                     archivoFiguras >> altura;
                     dato = new Rectangulo(base, altura); // Leak definetly lost
+                    cout << "Dato perdido: " << dato << endl;
                     break;
 
                 case TRIANGULO:
                     archivoFiguras >> base;
                     archivoFiguras >> altura;
                     dato = new Triangulo(base, altura); // Leak definetly lost
+                    cout << "Dato perdido: " << dato << endl;
                     break;
 
                 case CIRCULO:
                     archivoFiguras >> radio;
                     dato = new Circulo(radio); // Leak definetly lost
+                    cout << "Dato perdido: " << dato << endl;
                     break;
             }
             dato->calcularArea();
             listaFiguras.agregarAlPrincipio(dato);
         }
+        listaFiguras.mostrarNodos();
     } else cout << "No se pudo abrir el archivo\n";
 }
 
@@ -132,20 +136,20 @@ void Menu:: obtenerFigura() {
 void Menu:: bajaFigura() {
 
     cout << "- - - - - - - - -  Baja - - - - - - - - -\n";
-
-    int posicion;
-
     if (listaFiguras.obtenerCantidadElementos() > 0) {
+
+        int posicion;
 
         mostrarFiguras();
 
-        cout << "Ingrese el numero del elemento que desea dar de baja: ";
+        cout << "Ingrese el numero del elemento que desea dar de baja [1 - " << listaFiguras.obtenerCantidadElementos() << "]: ";
         cin >> posicion;
 
         validarRango(posicion, 1, listaFiguras.obtenerCantidadElementos());
         listaFiguras.sacar(posicion - 1);
-    }
-    cout << "Se sacó el elemento de la posicion " << posicion << " con exito.\n";
+
+        cout << "Se sacó el elemento de la posicion " << posicion << " con exito.\n";
+    } else cout << "No se pueden sacar elementos porque la lista esta vacia\n";
     cout << "- - - - - - - - - - - - - - - - - - - - -\n";
 }
 
@@ -154,6 +158,7 @@ void Menu:: agregarFigura() {
     cout << "- - - - - - - - -  Alta - - - - - - - - -\n";
 
     char tipoFigura;
+    int posicion;
 
     cout << "Ingrese el tipo de figura que desea\n"
             "   - [R]ectangulo\n"
@@ -162,18 +167,22 @@ void Menu:: agregarFigura() {
 
     cin >> tipoFigura;
 
+    cout << "Ingrese la posicion en la que desea insertar la nueva figura [1 - " << listaFiguras.obtenerCantidadElementos() << "]: ";
+    cin >> posicion;
+    validarRango(posicion, 1, listaFiguras.obtenerCantidadElementos());
+
     switch(toupper(tipoFigura)) {
 
         case RECTANGULO:
-            agregarRectangulo();
+            agregarRectangulo(posicion);
             break;
 
         case TRIANGULO:
-            agregarTriangulo();
+            agregarTriangulo(posicion);
             break;
 
         case CIRCULO:
-            agregarCirculo();
+            agregarCirculo(posicion);
             break;
 
         default:
@@ -205,7 +214,7 @@ void Menu:: mostrarSupMin() {
 }
 
 
-void Menu:: agregarRectangulo() {
+void Menu:: agregarRectangulo(int posicion) {
 
     double base, altura;
     Figura* figura;
@@ -219,10 +228,10 @@ void Menu:: agregarRectangulo() {
 
     figura = new Rectangulo(base, altura);
     figura->calcularArea();
-    listaFiguras.agregarAlPrincipio(figura);
+    listaFiguras.agregarEnPosicion(figura, posicion);
 }
 
-void Menu:: agregarTriangulo() {
+void Menu:: agregarTriangulo(int posicion) {
 
     double base, altura;
     Figura* figura;
@@ -236,10 +245,10 @@ void Menu:: agregarTriangulo() {
 
     figura = new Triangulo(base, altura);
     figura->calcularArea();
-    listaFiguras.agregarAlPrincipio(figura);
+    listaFiguras.agregarEnPosicion(figura, posicion);
 }
 
-void Menu:: agregarCirculo() {
+void Menu:: agregarCirculo(int posicion) {
 
     double radio;
     Figura* figura;
@@ -250,5 +259,5 @@ void Menu:: agregarCirculo() {
 
     figura = new Circulo(radio);
     figura->calcularArea();
-    listaFiguras.agregarAlPrincipio(figura);
+    listaFiguras.agregarEnPosicion(figura, posicion);
 }

@@ -14,8 +14,10 @@ Lista:: Lista () {
 }
 
 Lista:: ~Lista() {
+    cout << " ------------------ DESTRUCTOR ------------------ \n";
     while (!vacia())
         sacar(0);
+    mostrarNodos();
 }
 
 // <-------------------- Getters
@@ -101,6 +103,9 @@ void Lista:: sacar(int posicion) {
         borrar = anterior->obtenerSiguiente();
         anterior->asignarSiguiente(borrar->obtenerSiguiente());
     }
+    cout << "EL DATO ALMACENADO QUE SE VA A BORRAR ES: " << borrar->obtenerDato() << endl;
+    delete borrar->obtenerDato();
+    cout << "EL DATO QUE SE VA A BORRAR ES: " << borrar << endl;
     delete borrar;
     elementos--;
 }
