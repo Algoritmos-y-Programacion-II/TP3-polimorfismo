@@ -14,16 +14,21 @@ class Rectangulo : public Figura {
 
     // Metodos
     public:
-        // Descrpcion:
-        // PRE:
-        // POST:
+
+        // PRE: baseOut y alturaOut deben ser numeros de tipo double validos mayores a cero
+        // POST: Crea un rectangulo
         Rectangulo(double baseOut = 0, double alturaOut = 0);
 
-        // Descrpcion:
-        // PRE:
-        // POST:
+        // PRE: -
+        // POST: Calcula el area, y se la asigna al atributo area
         virtual void calcularArea();
+
+        // PRE: -
+        // POST: Muestra la figura y sus atributos
         virtual void mostrar();
+
+        // PRE: -
+        // POST: Devuelve el area
         virtual double obtenerArea();
 };
 

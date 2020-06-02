@@ -3,6 +3,9 @@
 //
 
 #include "Rectangulo.h"
+#include <iostream>
+
+using namespace std;
 
 Rectangulo:: Rectangulo(double baseOut, double alturaOut) {
     base = baseOut;

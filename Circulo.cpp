@@ -3,6 +3,9 @@
 //
 
 #include "Circulo.h"
+#include <iostream>
+
+using namespace std;
 
 Circulo:: Circulo(double radioOut) {
     radio = radioOut;

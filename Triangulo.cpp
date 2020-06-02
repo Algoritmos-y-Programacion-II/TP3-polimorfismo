@@ -3,6 +3,9 @@
 //
 
 #include "Triangulo.h"
+#include <iostream>
+
+using namespace std;
 
 Triangulo:: Triangulo(double baseOut, double alturaOut) {
     base = baseOut;
