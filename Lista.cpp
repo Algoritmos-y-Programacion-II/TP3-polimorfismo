@@ -15,7 +15,6 @@ Lista:: Lista () {
 
 Lista:: ~Lista() {
     while (!vacia())
-        // Mientras queden elementos, voy siempre sacando el que este en la posicion 1
         sacar(0);
 }
 
@@ -112,43 +111,4 @@ void Lista:: mostrarNodos() {
             obtenerNodo(i)->mostrarNodo();
         }
     }
-}
-
-void Lista:: cargarArchivoEnLista(string nombreArchivo) {
-
-    ifstream archivoFiguras(nombreArchivo);
-
-    char figura;
-    double base, altura, radio;
-
-    Dato dato;
-
-    if (!archivoFiguras.fail()) {
-
-        while (archivoFiguras >> figura) {
-
-            switch (figura) {
-
-                case RECTANGULO:
-                    archivoFiguras >> base;
-                    archivoFiguras >> altura;
-                    dato = new Rectangulo(base, altura);
-                    break;
-
-                case TRIANGULO:
-                    archivoFiguras >> base;
-                    archivoFiguras >> altura;
-                    dato = new Triangulo(base, altura);
-                    break;
-
-                case CIRCULO:
-                    archivoFiguras >> radio;
-                    dato = new Circulo(radio);
-
-                    break;
-            }
-            dato->calcularArea();
-            agregarAlPrincipio(dato);
-        }
-    } else cout << "No se pudo abrir el archivo\n";
 }

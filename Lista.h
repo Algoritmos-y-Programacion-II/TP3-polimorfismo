@@ -36,7 +36,6 @@ class Lista {
         void sacar(int posicion);
         bool vacia();
         void mostrarNodos();
-        void cargarArchivoEnLista(string nombreArchivo);
 
     private:
         Nodo* obtenerNodo(int posicion);

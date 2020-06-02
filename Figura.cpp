@@ -5,9 +5,9 @@
 #include "Figura.h"
 
 bool Figura:: operator < (Figura &figura) {
-    return this->obtenerArea() < figura.obtenerArea();
+    return this->obtenerArea() > figura.obtenerArea();
 }
 
 bool Figura:: operator > (Figura &figura) {
-    return this->obtenerArea() > figura.obtenerArea();
+    return this->obtenerArea() < figura.obtenerArea();
 }

@@ -27,25 +27,5 @@ int main(int argc, char* argv[]) {
 
     menu.mostrarDespedida();
 
-    /*
-    Lista listaFiguras;
-
-    Figura* figura;
-
-    Rectangulo rectangulo(10, 5);
-    rectangulo.calcularArea();
-    figura = &rectangulo;
-    listaFiguras.agregarAlPrincipio(figura);
-
-    Triangulo triangulo(4, 3);
-    triangulo.calcularArea();
-    figura = &triangulo;
-    listaFiguras.agregarAlPrincipio(figura);
-
-    Circulo circulo(100);
-    circulo.calcularArea();
-    figura = &circulo;
-    listaFiguras.agregarAlPrincipio(figura);
-    */
     return 0;
 }
