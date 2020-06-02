@@ -19,24 +19,73 @@ class Menu {
         Lista listaFiguras;
 
     public:
-        int obtenerOpcion();
-        Lista obtenerLista();
-        void cargarDatos(string archFiguras);
-        void mostrarBienvenida();
-        void mostrarDespedida();
 
-        void mostrarMenu();
+        // PRE: -
+        // POST: Devuelve la opcion
+        int obtenerOpcion();
+
+        // PRE: -
+        // POST: Devuelve la lista
+        Lista obtenerLista();
+
+        // PRE: archFiguras debe ser un string valido
+        // POST: Carga los datos del archivo en la lista
+        void cargarDatos(string archFiguras);
+
+        // PRE: -
+        // POST: Muestra las opciones disponibles
+        void mostrarOpciones();
+
+        // PRE: -
+        // POST: Le pide al usuario que ingrese por teclado una opcion, y se la asigna al atributo opcion
         void elegirOpcion();
+
+        // PRE: Todos los enteros deben ser validos
+        // POST: Si no se cumple que min <= num <= max le pide al usuario que reingrese el valor
         void validarRango(int &num, int min = MIN, int max = MAX);
+
+        // PRE: El atributo opcion debe ser mayor o igual a cero y menor o igual a la cantidad de opciones que tenga
+        //      el menu
+        // POST: Abre la opcion
         void abrirSubmenu();
-        void obtenerFigura();
+
+        // PRE: -
+        // POST: Muestra la figura de la posicion ingresada por el usuario
+        void mostrarFigura();
+
+        // PRE: -
+        // POST: Saca de la lista la figura de la posicion ingresada por el usuario
         void bajaFigura();
+
+        // PRE: -
+        // POST: Le pide al usuario que ingrese que tipo de figura desea agregar, y llama al metodo para crear
+        //       y agregar esa figura
         void agregarFigura();
+
+        // PRE: -
+        // POST: Lista por pantalla todas las figuras de la lista
         void mostrarFiguras();
+
+        // PRE: -
+        // POST: Muestra por pantalla la figura (y sus datos) con la mayor superficie
         void mostrarSupMax();
+
+        // PRE: -
+        // POST: Muestra por pantalla la figura (y sus datos) con la menor superficie
         void mostrarSupMin();
+
+    private:
+
+        // PRE: posicion debe ser un entero valido mayor a cero y menor o igual a la cantidad de elementos de la lista
+        // POST: Le pide al usuario que ingrese los datos del rectangulo por teclado, y lo agrega a la lista
         void agregarRectangulo(int posicion);
+
+        // PRE: posicion debe ser un entero valido mayor a cero y menor o igual a la cantidad de elementos de la lista
+        // POST: Le pide al usuario que ingrese los datos del triangulo por teclado, y lo agrega a la lista
         void agregarTriangulo(int posicion);
+
+        // PRE: posicion debe ser un entero valido mayor a cero y menor o igual a la cantidad de elementos de la lista
+        // POST: Le pide al usuario que ingrese los datos del circulo por teclado, y lo agrega a la lista
         void agregarCirculo(int posicion);
 };
 

@@ -4,6 +4,9 @@
 
 #include "Menu.h"
 #include "Lista.h"
+#include "Rectangulo.h"
+#include "Triangulo.h"
+#include "Circulo.h"
 
 #include <iostream>
 
@@ -24,14 +27,6 @@ int Menu:: obtenerOpcion() {
 
 Lista Menu:: obtenerLista() {
     return listaFiguras;
-}
-
-void Menu:: mostrarBienvenida() {
-    cout << "Bienvenid@!\n";
-}
-
-void Menu:: mostrarDespedida() {
-    cout << "Hasta la proxima\n";
 }
 
 void Menu:: cargarDatos(string archFiguras) {
@@ -71,7 +66,7 @@ void Menu:: cargarDatos(string archFiguras) {
     } else cout << "No se pudo abrir el archivo\n";
 }
 
-void Menu::mostrarMenu() {
+void Menu:: mostrarOpciones() {
     cout << "\n   1. Obtener una figura de determinada posicion\n"
             "   2. Dar de baja una figura\n"
             "   3. Agregar manualmente una figura\n"
@@ -99,7 +94,7 @@ void Menu:: abrirSubmenu() {
 
     switch(opcion) {
 
-        case OBTENER_FIGURA: obtenerFigura(); break;
+        case OBTENER_FIGURA: mostrarFigura(); break;
 
         case BAJA: bajaFigura(); break;
 
@@ -113,9 +108,9 @@ void Menu:: abrirSubmenu() {
     }
 }
 
-void Menu:: obtenerFigura() {
+void Menu:: mostrarFigura() {
 
-    cout << "- - - - - - - - - Obtener - - - - - - - -\n";
+    cout << "- - - - - - - - - Mostrar - - - - - - - -\n";
 
     if (listaFiguras.obtenerCantidadElementos() > 0) {
 
@@ -192,23 +187,37 @@ void Menu:: agregarFigura() {
 
 void Menu:: mostrarFiguras() {
     cout << "- - - - - - - - Figuras - - - - - - - - -\n";
-    for (int i = 0; i < listaFiguras.obtenerCantidadElementos(); i ++) {
-        cout << i+1 << ". ";
-        listaFiguras.obtenerDato(i)->mostrar();
-        cout << "\n";
-    }
+
+    if (listaFiguras.obtenerCantidadElementos() > 0) {
+
+        for (int i = 0; i < listaFiguras.obtenerCantidadElementos(); i++) {
+            cout << i + 1 << ". ";
+            listaFiguras.obtenerDato(i)->mostrar();
+            cout << "\n";
+        }
+    } else cout << "No hay figuras para mostrar porque la lista esta vacia\n";
     cout << "- - - - - - - - - - - - - - - - - - - - -\n";
 }
 
 void Menu:: mostrarSupMax() {
     cout << "- - - - - - Mayor  superficie - - - - - -\n";
-    listaFiguras.obtenerMax()->mostrar();;
+
+    if (listaFiguras.obtenerCantidadElementos() > 0)
+        listaFiguras.obtenerMax()->mostrar();
+
+    else cout << "No hay figuras para mostrar porque la lista esta vacia\n";
+
     cout << "- - - - - - - - - - - - - - - - - - - - -\n";
 }
 
 void Menu:: mostrarSupMin() {
     cout << "- - - - - - Menor  superficie - - - - - -\n";
-    listaFiguras.obtenerMin()->mostrar();
+
+    if (listaFiguras.obtenerCantidadElementos() > 0)
+        listaFiguras.obtenerMin()->mostrar();
+
+    else cout << "No hay figuras para mostrar porque la lista esta vacia\n";
+
     cout << "- - - - - - - - - - - - - - - - - - - - -\n";
 }
 

@@ -20,19 +20,15 @@ int main(int argc, char* argv[]) {
                 "            Se utilizara \"figuras.txt\" como nombre del archivo.\n\n";
     }
 
-    menu.mostrarBienvenida();
-
-    cout << "Cargando datos...\n";
+    cout << "Cargando datos del archivo \"" << archFiguras << "\"\n";
     menu.cargarDatos(archFiguras);
-    cout << "Datos cargados con exito!\n\n";
+    cout << "Datos cargados con exito\n\n";
 
     do {
-        menu.mostrarMenu();
+        menu.mostrarOpciones();
         menu.elegirOpcion();
         menu.abrirSubmenu();
     } while (menu.obtenerOpcion() != SALIR);
-
-    menu.mostrarDespedida();
 
     return 0;
 }
