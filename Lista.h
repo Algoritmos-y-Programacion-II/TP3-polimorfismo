@@ -18,8 +18,6 @@ class Lista {
     // Metodos
     public:
 
-        // TODO agregar comentarios
-
         // PRE: -
         // POST: Crea una lista con 0 elementos
         Lista();

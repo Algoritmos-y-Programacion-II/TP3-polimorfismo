@@ -19,8 +19,6 @@ class Nodo {
     // Metodos
     public:
 
-        // TODO agregar comentarios
-
         // PRE: datoOut debe ser valido
         // POST: Construye un nodo con el dato recibido
         Nodo(Dato datoOut);
