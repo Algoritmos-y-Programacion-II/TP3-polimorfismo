@@ -29,46 +29,43 @@ class Lista {
         ~Lista();
 
         // PRE: -
-        // POST:
+        // POST: Devuelve el dato de la posicion recibida por parametro
         Dato obtenerDato(int posicion);
 
         // PRE: -
-        // POST:
+        // POST: Devuelve la cantidad de elementos
         int obtenerCantidadElementos();
 
         // PRE: -
-        // POST:
+        // POST: Devuelve el dato maximo
         Dato obtenerMax();
 
         // PRE: -
-        // POST:
+        // POST: Devuelve el dato minimo
         Dato obtenerMin();
 
-        // PRE: -
-        // POST:
-        void agregarEnPosicion(Dato datoOut, int posicion);
+        // PRE: datoOut debe ser valido, y posicionOut debe ser mayor a cero y menor a la cantidad total de elementos
+        // POST: Agrega el dato recibido como parametro en la posicion recibida como parametro
+        void agregarEnPosicion(Dato datoOut, int posicionOut);
 
-        // PRE: -
-        // POST:
+        // PRE: datoOut debe ser valido
+        // POST: Agrega el dato recibido como parametro al principio de la lista
         void agregarAlPrincipio(Dato datoOut);
 
         // PRE: -
-        // POST:
+        // POST: Saca el elemento de la posicion recibida como parametro de la lista
         void sacar(int posicion);
 
         // PRE: -
-        // POST:
+        // POST: Devuelve true si la lista esta vacia, de lo contrario false
         bool vacia();
 
         // PRE: -
-        // POST:
+        // POST: Muestra por pantalla los datos de todos los nodos
         void mostrarNodos();
 
     private:
         Nodo* obtenerNodo(int posicion);
 };
-
-
-
 
 #endif //TRABAJOPRACTICO3FIGURAS_LISTA_H

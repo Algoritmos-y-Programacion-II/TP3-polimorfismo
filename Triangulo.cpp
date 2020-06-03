@@ -16,10 +16,6 @@ void Triangulo:: calcularArea() {
     area = (base * altura) / 2;
 }
 
-double Triangulo:: obtenerArea() {
-    return area;
-}
-
 void Triangulo:: mostrar() {
     cout << "   Triangulo"
             "\n           Altura: " << altura <<

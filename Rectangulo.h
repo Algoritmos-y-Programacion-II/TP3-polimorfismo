@@ -10,7 +10,7 @@
 class Rectangulo : public Figura {
     // Atributos
     private:
-        double altura, base, area;
+        double altura, base;
 
     // Metodos
     public:
@@ -26,10 +26,6 @@ class Rectangulo : public Figura {
         // PRE: -
         // POST: Muestra la figura y sus atributos
         virtual void mostrar();
-
-        // PRE: -
-        // POST: Devuelve el area
-        virtual double obtenerArea();
 };
 
 

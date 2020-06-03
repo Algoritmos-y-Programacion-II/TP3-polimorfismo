@@ -10,11 +10,10 @@
 class Circulo : public Figura {
     //Atributos
     private:
-        double radio, area;
+        double radio;
 
     // Metodos
     public:
-
 
         // PRE: radioOut debe ser un numero de tipo double valido mayor a cero
         // POST: Crea un circulo
@@ -27,10 +26,6 @@ class Circulo : public Figura {
         // PRE: -
         // POST: Muestra la figura y sus atributos
         virtual void mostrar();
-
-        // PRE: -
-        // POST: Devuelve el area
-        virtual double obtenerArea();
 };
 
 

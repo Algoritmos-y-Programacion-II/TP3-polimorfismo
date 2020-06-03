@@ -97,7 +97,7 @@ void Lista:: sacar(int posicion) {
         borrar = anterior->obtenerSiguiente();
         anterior->asignarSiguiente(borrar->obtenerSiguiente());
     }
-    delete borrar->obtenerDato();
+    delete borrar->obtenerDato(); // FIXME agregar destructor virtual
     delete borrar;
     elementos--;
 }

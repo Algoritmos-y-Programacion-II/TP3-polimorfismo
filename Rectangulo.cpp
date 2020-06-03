@@ -16,10 +16,6 @@ void Rectangulo:: calcularArea() {
     area = base * altura;
 }
 
-double Rectangulo:: obtenerArea() {
-    return area;
-}
-
 void Rectangulo:: mostrar() {
     cout << "   Rectangulo"
             "\n           Altura: " << altura <<

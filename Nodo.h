@@ -21,28 +21,28 @@ class Nodo {
 
         // TODO agregar comentarios
 
-        // PRE: -
-        // POST:
+        // PRE: datoOut debe ser valido
+        // POST: Construye un nodo con el dato recibido
         Nodo(Dato datoOut);
 
-        // PRE: -
-        // POST:
-        void asignarSiguiente(Nodo* psigOut);
+        // PRE: pSigOut debe ser valido
+        // POST: Le asigna pSigOut a pSig
+        void asignarSiguiente(Nodo* pSigOut);
 
-        // PRE: -
-        // POST:
+        // PRE: datoOut debe ser valido
+        // POST: Le asigna datoOut a dato
         void asignarDato(Dato datoOut);
 
         // PRE: -
-        // POST:
+        // POST: Devuelve dato
         Dato obtenerDato();
 
         // PRE: -
-        // POST:
+        // POST: Devuelve pSig
         Nodo* obtenerSiguiente();
 
         // PRE: -
-        // POST:
+        // POST: Muestra los datos del nodo
         void mostrarNodo();
 };
 

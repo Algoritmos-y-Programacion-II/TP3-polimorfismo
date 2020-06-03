@@ -15,10 +15,6 @@ void Circulo:: calcularArea() {
     area = 3.14 * radio * radio;
 }
 
-double Circulo:: obtenerArea() {
-    return area;
-}
-
 void Circulo:: mostrar() {
     cout << "  Circulo"
             "\n           Radio: " << radio <<

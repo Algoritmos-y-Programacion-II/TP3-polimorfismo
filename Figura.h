@@ -7,11 +7,16 @@
 
 class Figura {
 
+    protected:
+        double area;
+
     // Metodos
     public:
         virtual void calcularArea() = 0;
         virtual void mostrar() = 0;
-        virtual double obtenerArea() = 0;
+        // TODO virtual ~Figura() = 0;
+
+        double obtenerArea();
 
         // PRE: figura debe ser un objeto valido
         // POST: Sobrecarga el operador < comparando el area de la figura
