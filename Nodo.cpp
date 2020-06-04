@@ -13,6 +13,10 @@ Nodo:: Nodo(Dato datoOut) {
     pSig = 0;
 }
 
+Nodo:: ~Nodo() {
+    delete dato;
+}
+
 // <-------------------- Setters
 void Nodo:: asignarSiguiente(Nodo* pSigOut) {
     pSig = pSigOut;

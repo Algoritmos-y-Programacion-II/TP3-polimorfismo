@@ -14,8 +14,9 @@ class Figura {
     public:
         virtual void calcularArea() = 0;
         virtual void mostrar() = 0;
-        // TODO virtual ~Figura() = 0;
 
+        // PRE: -
+        // POST: Devuelve el area
         double obtenerArea();
 
         // PRE: figura debe ser un objeto valido

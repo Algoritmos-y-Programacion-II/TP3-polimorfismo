@@ -23,6 +23,8 @@ class Nodo {
         // POST: Construye un nodo con el dato recibido
         Nodo(Dato datoOut);
 
+        ~Nodo();
+
         // PRE: pSigOut debe ser valido
         // POST: Le asigna pSigOut a pSig
         void asignarSiguiente(Nodo* pSigOut);
@@ -43,6 +45,5 @@ class Nodo {
         // POST: Muestra los datos del nodo
         void mostrarNodo();
 };
-
 
 #endif //TRABAJOPRACTICO3FIGURAS_NODO_H
