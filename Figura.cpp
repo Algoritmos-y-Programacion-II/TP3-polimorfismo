@@ -4,14 +4,10 @@
 
 #include "Figura.h"
 
-double Figura:: obtenerArea() {
-    return area;
-}
-
 bool Figura:: operator < (Figura &figura) {
-    return this->obtenerArea() < figura.obtenerArea();
+    return this->area < figura.area;
 }
 
 bool Figura:: operator > (Figura &figura) {
-    return this->obtenerArea() > figura.obtenerArea();
+    return this->area > figura.area;
 }

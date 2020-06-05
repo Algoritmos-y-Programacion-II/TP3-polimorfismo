@@ -18,8 +18,8 @@ int Triangulo:: calcularArea() {
 }
 
 void Triangulo:: mostrar() {
-    cout << "   Triangulo"
-            "\n           Altura: " << altura <<
-            "\n           Base: " << base <<
-            "\n           Area: " << area << "\n";
+    cout << "\tTriangulo"
+            "\n\t\t\tAltura: " << altura <<
+            "\n\t\t\tBase: " << base <<
+            "\n\t\t\tArea: " << area << "\n";
 }

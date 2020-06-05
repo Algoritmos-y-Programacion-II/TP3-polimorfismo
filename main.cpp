@@ -5,10 +5,25 @@
 */
 
 #include "Menu.h"
+#include "Circulo.h"
+#include "Rectangulo.h"
 #include <iostream>
 
 int main(int argc, char* argv[]) {
 
+    Lista lista;
+    Figura* figura;
+
+    figura = new Circulo(5);
+    lista.agregarAlPrincipio(figura);
+
+    figura = new Rectangulo(4, 6);
+    lista.agregarAlPrincipio(figura);
+
+    lista.obtenerDato(0)->mostrar();
+    lista.obtenerDato(1)->mostrar();
+
+    /*
     Menu menu;
     string archFiguras = "figuras.txt";
 
@@ -29,6 +44,6 @@ int main(int argc, char* argv[]) {
         menu.elegirOpcion();
         menu.abrirSubmenu();
     } while (menu.obtenerOpcion() != SALIR);
-
+*/
     return 0;
 }

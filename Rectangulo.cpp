@@ -18,8 +18,8 @@ int Rectangulo:: calcularArea() {
 }
 
 void Rectangulo:: mostrar() {
-    cout << "   Rectangulo"
-            "\n           Altura: " << altura <<
-            "\n           Base: " << base <<
-            "\n           Area: " << area << "\n";
+    cout << "\tRectangulo"
+            "\n\t\t\tAltura: " << altura <<
+            "\n\t\t\tBase: " << base <<
+            "\n\t\t\tArea: " << area << "\n";
 }

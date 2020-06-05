@@ -15,10 +15,6 @@ class Figura {
         virtual int calcularArea() = 0;
         virtual void mostrar() = 0;
 
-        // PRE: -
-        // POST: Devuelve el area
-        double obtenerArea();
-
         // PRE: figura debe ser un objeto valido
         // POST: Sobrecarga el operador < comparando el area de la figura
         bool operator < (Figura &figura);
