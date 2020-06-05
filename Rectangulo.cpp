@@ -13,7 +13,7 @@ Rectangulo:: Rectangulo(double baseOut, double alturaOut) {
     area = calcularArea();
 }
 
-int Rectangulo:: calcularArea() {
+double Rectangulo:: calcularArea() {
     return base * altura;
 }
 

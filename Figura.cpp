@@ -3,11 +3,14 @@
 //
 
 #include "Figura.h"
+#include <iostream>
 
-bool Figura:: operator < (Figura &figura) {
-    return this->area < figura.area;
+using namespace std;
+
+bool Figura:: operator < (Figura* figura) {
+    return this->area < figura->area;
 }
 
-bool Figura:: operator > (Figura &figura) {
-    return this->area > figura.area;
+bool Figura:: operator > (Figura* figura) {
+    return this->area > figura->area;
 }

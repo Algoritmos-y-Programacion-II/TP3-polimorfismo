@@ -13,7 +13,7 @@ Triangulo:: Triangulo(double baseOut, double alturaOut) {
     area = calcularArea();
 }
 
-int Triangulo:: calcularArea() {
+double Triangulo:: calcularArea() {
     return (base * altura) / 2;
 }
 

@@ -12,7 +12,7 @@ Circulo:: Circulo(double radioOut) {
     area = calcularArea();
 }
 
-int Circulo:: calcularArea() {
+double Circulo:: calcularArea() {
     return 3.14 * radio * radio;
 }
 
