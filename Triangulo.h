@@ -4,6 +4,7 @@
 #include "Figura.h"
 
 class Triangulo : public Figura {
+
     // Atributos
     private:
         double altura, base;

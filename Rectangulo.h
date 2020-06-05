@@ -4,6 +4,7 @@
 #include "Figura.h"
 
 class Rectangulo : public Figura {
+
     // Atributos
     private:
         double altura, base;
