@@ -1,7 +1,3 @@
-//
-// Created by valentina on 29/5/20.
-//
-
 #ifndef TRABAJOPRACTICO3FIGURAS_MENU_H
 #define TRABAJOPRACTICO3FIGURAS_MENU_H
 
@@ -39,6 +35,10 @@ class Menu {
         // PRE: -
         // POST: Le pide al usuario que ingrese por teclado una opcion, y se la asigna al atributo opcion
         void elegirOpcion();
+
+        // PRE: -
+        // POST: Si num no es un entero, pide el reingreso hasta que lo sea y luego lo devuelve
+        int validarEntero(string &num);
 
         // PRE: Todos los enteros deben ser validos
         // POST: Si no se cumple que min <= num <= max le pide al usuario que reingrese el valor

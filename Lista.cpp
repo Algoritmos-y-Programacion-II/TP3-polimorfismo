@@ -1,6 +1,3 @@
-//
-// Created by valentina on 26/5/20.
-//
 #include <iostream>
 #include "Lista.h"
 
@@ -36,7 +33,7 @@ Nodo* Lista:: obtenerNodo(int posicion) {
 Dato Lista:: obtenerMax() {
     Dato max = obtenerDato(0);
     for (int i = 0; i < elementos; i++) {
-        if (max->operator < (obtenerDato(i)))
+        if (max->obtenerArea() < obtenerDato(i)->obtenerArea())
             max = obtenerDato(i);
     }
     return max;
@@ -45,7 +42,7 @@ Dato Lista:: obtenerMax() {
 Dato Lista:: obtenerMin() {
     Dato min = obtenerDato(0);
     for (int i = 0; i < elementos; i++) {
-        if (min->operator > (obtenerDato(i)))
+        if (min->obtenerArea() > obtenerDato(i)->obtenerArea())
             min = obtenerDato(i);
     }
     return min;

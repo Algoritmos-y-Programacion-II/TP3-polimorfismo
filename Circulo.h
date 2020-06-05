@@ -1,7 +1,3 @@
-//
-// Created by valentina on 26/5/20.
-//
-
 #ifndef TRABAJOPRACTICO3FIGURAS_CIRCULO_H
 #define TRABAJOPRACTICO3FIGURAS_CIRCULO_H
 
