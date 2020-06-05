@@ -60,7 +60,7 @@ void Menu:: cargarDatos(string archFiguras) {
                     dato = new Circulo(radio);
                     break;
             }
-            listaFiguras.agregarAlPrincipio(dato);
+            listaFiguras.agregarAlFinal(dato);
         }
     } else cout << "No se pudo abrir el archivo\n";
 }

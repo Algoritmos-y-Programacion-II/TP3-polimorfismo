@@ -48,7 +48,7 @@ class Lista {
 
         // PRE: datoOut debe ser valido
         // POST: Agrega el dato recibido como parametro al principio de la lista
-        void agregarAlPrincipio(Dato datoOut);
+        void agregarAlFinal(Dato datoOut);
 
         // PRE: La lista debe estar creada y ser distinta de vacía
         // POST: Saca el elemento de la posicion recibida como parametro de la lista

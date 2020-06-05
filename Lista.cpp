@@ -56,13 +56,12 @@ bool Lista:: vacia() {
     return primero == 0;
 }
 
-void Lista:: agregarAlPrincipio(Dato datoOut) {
+void Lista:: agregarAlFinal(Dato datoOut) {
     Nodo* nuevoNodo = new Nodo(datoOut);
     Nodo* pAux = primero;
     if (this->vacia())
         primero = nuevoNodo;
-    else
-    {
+    else {
         while (pAux->obtenerSiguiente() != 0)
             pAux = pAux->obtenerSiguiente();
         pAux->asignarSiguiente(nuevoNodo);
@@ -71,16 +70,16 @@ void Lista:: agregarAlPrincipio(Dato datoOut) {
 }
 
 void Lista:: agregarEnPosicion(Dato datoOut, int posicion) {
-    Nodo* nuevoPrimero = new Nodo(datoOut);
+    Nodo* nuevoNodo = new Nodo(datoOut);
 
     if (posicion == 0) {
-        nuevoPrimero->asignarSiguiente(primero);
-        primero = nuevoPrimero;
+        nuevoNodo->asignarSiguiente(primero);
+        primero = nuevoNodo;
     }
     else {
         Nodo* anterior = obtenerNodo(posicion - 1);
-        nuevoPrimero->asignarSiguiente(anterior->obtenerSiguiente());
-        anterior->asignarSiguiente(nuevoPrimero);
+        nuevoNodo->asignarSiguiente(anterior->obtenerSiguiente());
+        anterior->asignarSiguiente(nuevoNodo);
     }
     elementos++;
 }
