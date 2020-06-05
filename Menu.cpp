@@ -60,7 +60,6 @@ void Menu:: cargarDatos(string archFiguras) {
                     dato = new Circulo(radio);
                     break;
             }
-            dato->calcularArea();
             listaFiguras.agregarAlPrincipio(dato);
         }
     } else cout << "No se pudo abrir el archivo\n";
@@ -235,7 +234,6 @@ void Menu:: agregarRectangulo(int posicion) {
     cout << "\n";
 
     figura = new Rectangulo(base, altura);
-    figura->calcularArea();
     listaFiguras.agregarEnPosicion(figura, posicion);
 }
 
@@ -252,7 +250,6 @@ void Menu:: agregarTriangulo(int posicion) {
     cout << "\n";
 
     figura = new Triangulo(base, altura);
-    figura->calcularArea();
     listaFiguras.agregarEnPosicion(figura, posicion);
 }
 
@@ -266,6 +263,5 @@ void Menu:: agregarCirculo(int posicion) {
     cout << "\n";
 
     figura = new Circulo(radio);
-    figura->calcularArea();
     listaFiguras.agregarEnPosicion(figura, posicion);
 }

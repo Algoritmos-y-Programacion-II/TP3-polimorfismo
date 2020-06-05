@@ -21,7 +21,7 @@ class Triangulo : public Figura {
 
         // PRE: -
         // POST: Calcula el area, y se la asigna al atributo area
-        virtual void calcularArea();
+        virtual int calcularArea();
 
         // PRE: -
         // POST: Muestra la figura y sus atributos

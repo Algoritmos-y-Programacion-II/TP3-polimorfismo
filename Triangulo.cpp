@@ -10,10 +10,11 @@ using namespace std;
 Triangulo:: Triangulo(double baseOut, double alturaOut) {
     base = baseOut;
     altura = alturaOut;
+    area = calcularArea();
 }
 
-void Triangulo:: calcularArea() {
-    area = (base * altura) / 2;
+int Triangulo:: calcularArea() {
+    return (base * altura) / 2;
 }
 
 void Triangulo:: mostrar() {

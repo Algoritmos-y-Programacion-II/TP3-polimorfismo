@@ -12,7 +12,7 @@ class Figura {
 
     // Metodos
     public:
-        virtual void calcularArea() = 0;
+        virtual int calcularArea() = 0;
         virtual void mostrar() = 0;
 
         // PRE: -

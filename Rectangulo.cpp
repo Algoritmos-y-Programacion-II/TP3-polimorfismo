@@ -10,10 +10,11 @@ using namespace std;
 Rectangulo:: Rectangulo(double baseOut, double alturaOut) {
     base = baseOut;
     altura = alturaOut;
+    area = calcularArea();
 }
 
-void Rectangulo:: calcularArea() {
-    area = base * altura;
+int Rectangulo:: calcularArea() {
+    return base * altura;
 }
 
 void Rectangulo:: mostrar() {

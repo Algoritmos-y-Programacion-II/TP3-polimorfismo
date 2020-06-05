@@ -9,10 +9,11 @@ using namespace std;
 
 Circulo:: Circulo(double radioOut) {
     radio = radioOut;
+    area = calcularArea();
 }
 
-void Circulo:: calcularArea() {
-    area = 3.14 * radio * radio;
+int Circulo:: calcularArea() {
+    return 3.14 * radio * radio;
 }
 
 void Circulo:: mostrar() {
