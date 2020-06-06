@@ -1,7 +1,7 @@
 #ifndef TRABAJOPRACTICO3FIGURAS_MENU_H
 #define TRABAJOPRACTICO3FIGURAS_MENU_H
 
-#include "Lista.h"
+#include "Lista/Lista.h"
 
 using namespace std;
 

@@ -3,10 +3,10 @@
 #include <fstream>  // Se utiliza en cargarDatos()
 
 #include "Menu.h"
-#include "Lista.h"
-#include "Rectangulo.h"
-#include "Triangulo.h"
-#include "Circulo.h"
+#include "Lista/Lista.h"
+#include "Figuras/Rectangulo.h"
+#include "Figuras/Triangulo.h"
+#include "Figuras/Circulo.h"
 
 const int OBTENER_FIGURA = 1;
 const int BAJA = 2;

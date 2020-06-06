@@ -1,7 +1,7 @@
 #ifndef TRABAJOPRACTICO3FIGURAS_NODO_H
 #define TRABAJOPRACTICO3FIGURAS_NODO_H
 
-#include "Figura.h"
+#include "../Figuras/Figura.h"
 #include <iostream>
 
 //typedef Figura* Dato;
