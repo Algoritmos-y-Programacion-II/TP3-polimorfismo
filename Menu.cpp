@@ -23,7 +23,7 @@ int Menu:: obtenerOpcion() {
     return opcion;
 }
 
-Lista Menu:: obtenerLista() {
+Lista<Figura*> Menu:: obtenerLista() {
     return listaFiguras;
 }
 
@@ -33,7 +33,7 @@ void Menu:: cargarDatos(string archFiguras) {
 
     char figura;
     double base, altura, radio;
-    Dato dato;
+    Figura* dato;
 
     if (!archivoFiguras.fail()) {
 

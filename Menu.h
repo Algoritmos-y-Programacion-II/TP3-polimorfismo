@@ -14,7 +14,7 @@ class Menu {
     // Atributos
     private:
         int opcion;
-        Lista listaFiguras;
+        Lista<Figura*> listaFiguras;
 
     // Metodos
     public:
@@ -25,7 +25,7 @@ class Menu {
 
         // PRE: -
         // POST: Devuelve la lista
-        Lista obtenerLista();
+        Lista<Figura*> obtenerLista();
 
         // PRE: archFiguras debe ser un string valido
         // POST: Carga los datos del archivo en la lista
