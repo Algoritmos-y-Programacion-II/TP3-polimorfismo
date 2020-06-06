@@ -1,7 +1,35 @@
 75.41/95.15: Algoritmos y Programacion II - Catedra Juarez - 1°C 2020
 ================
-Trabajo Practico Individual N3: Figuras
+Trabajo Practico Individual N3: Lista Polimórfica de Figuras
 ------------
+La finalidad del programa es meramente educativo, para ver el manejo de una lista dinámica y polimórfica.
+ 
+El programa se encarga de leer un archivo .txt y armar una lista dinámica y polimórfica que almacena los datos de dicho 
+archivo.
+
+El formato del archivo debe ser:
+
+   * X numero
+   * X numero numero
+    
+Donde X es un caracter que puede ser C (circulo), R (rectangulo), o T (triangulo), y el numero que acompaña a la letra 
+es el radio, o la base y altura.
+Por ejemplo:
+
+    R 5.3 2.1
+ 
+    T 4.1 8
+ 
+    C 3.2
+    
+El programa tiene un menú que le permite al usuario realizar distintas operaciones:
+   1. Ver los atributos de un objeto en una determinada posicion
+   2. Dar de baja un objeto de cierta posición
+   3. Agregar un nuevo objeto de forma manual
+   4. Listar todos los objetos
+   5. Mostrar la figura con el área máxima
+   6. Mostrar la figura con el área mínima
+
 Hecho con C++.
 
 Instalación

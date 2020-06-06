@@ -1,15 +1,22 @@
-//
-// Created by valentina on 26/5/20.
-//
-
 #include "Triangulo.h"
 
+#include <iostream>
+
+using namespace std;
+
 Triangulo:: Triangulo(double baseOut, double alturaOut) {
-    letraInicial = 'T';
     base = baseOut;
     altura = alturaOut;
+    area = calcularArea();
 }
 
-double Triangulo:: obtenerArea() {
+double Triangulo:: calcularArea() {
     return (base * altura) / 2;
+}
+
+void Triangulo:: mostrar() {
+    cout << "\tTriangulo"
+            "\n\t\tAltura: " << altura <<
+            "\n\t\tBase: " << base <<
+            "\n\t\tArea: " << area << "\n";
 }

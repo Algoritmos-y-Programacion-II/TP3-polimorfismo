@@ -1,7 +1,3 @@
-//
-// Created by valentina on 26/5/20.
-//
-
 #ifndef TRABAJOPRACTICO3FIGURAS_RECTANGULO_H
 #define TRABAJOPRACTICO3FIGURAS_RECTANGULO_H
 
@@ -9,17 +5,24 @@
 
 class Rectangulo : public Figura {
 
+    // Atributos
+    private:
+        double altura, base;
+
     // Metodos
     public:
-        // Descrpcion:
-        // PRE:
-        // POST:
+
+        // PRE: baseOut y alturaOut deben ser numeros de tipo double validos mayores a cero
+        // POST: Crea un rectangulo
         Rectangulo(double baseOut = 0, double alturaOut = 0);
 
-        // Descrpcion:
-        // PRE:
-        // POST:
-        virtual double obtenerArea();
+        // PRE: -
+        // POST: Calcula el area, y se la asigna al atributo area
+        virtual double calcularArea();
+
+        // PRE: -
+        // POST: Muestra la figura y sus atributos
+        virtual void mostrar();
 };
 
 

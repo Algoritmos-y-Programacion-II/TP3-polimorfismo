@@ -1,3 +1,15 @@
+/*
+  75.41/95.15: Algoritmos y Programacion II - Catedra Juarez - 1°C 2020
+  Trabajo Practico Individual N3: Lista Polimorfica de Figuras
+  Hecho por Valentina Varela Rodriguez - 105374
+
+  NOTA: Hay dos archivos de prueba porque se puede indicar por la linea de comandos el nombre del archivo a abrir.
+        En caso de no indicar nada, se utiliza 'figuras.txt'
+*/
+
+#include <iostream>
+#include <fstream>
+
 #include "Menu.h"
 
 int main(int argc, char* argv[]) {
@@ -10,22 +22,25 @@ int main(int argc, char* argv[]) {
 
     else if (argc > 2) {
         cout << "-- AVISO -- La cantidad de argumentos es incorrecta.\n"
-                "            Se utilizara \"figuras.txt\" como nombre del archivo.\n\n";
+                "\t\t\tSe utilizara \"figuras.txt\" como nombre del archivo.\n\n";
     }
 
-    menu.mostrarBienvenida();
+    ifstream archivoFiguras(archFiguras);
 
-    cout << "Cargando datos...\n";
-    menu.cargarDatos(archFiguras);
-    cout << "Datos cargados con exito!\n\n";
+    if (!archivoFiguras.fail()) {
 
-    do {
-        menu.mostrarMenu();
-        menu.elegirOpcion();
-        menu.abrirSubmenu();
-    } while (menu.obtenerOpcion() != SALIR);
+        cout << "\n\tCargando datos del archivo \"" << archFiguras << "\"\n";
+        menu.cargarDatos(archivoFiguras);
+        cout << "\tDatos cargados con exito\n\n";
 
-    menu.mostrarDespedida();
+        do {
+            menu.mostrarOpciones();
+            menu.elegirOpcion();
+            menu.abrirSubmenu();
+        } while (menu.obtenerOpcion() != SALIR);
+
+    } else
+        cout << "\tNo se pudo abrir el archivo.\n";
 
     return 0;
 }

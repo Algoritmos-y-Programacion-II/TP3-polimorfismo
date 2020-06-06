@@ -1,28 +1,27 @@
-//
-// Created by valentina on 26/5/20.
-//
-
 #ifndef TRABAJOPRACTICO3FIGURAS_CIRCULO_H
 #define TRABAJOPRACTICO3FIGURAS_CIRCULO_H
 
 #include "Figura.h"
 
 class Circulo : public Figura {
+    //Atributos
+    private:
+        double radio;
 
     // Metodos
     public:
 
-        // Descrpcion:
-        // PRE:
-        // POST:
+        // PRE: radioOut debe ser un numero de tipo double valido mayor a cero
+        // POST: Crea un circulo
         Circulo(double radioOut = 0);
 
-        // Descrpcion:
-        // PRE:
-        // POST:
-        virtual double obtenerArea();
+        // PRE: -
+        // POST: Calcula el area, y se la asigna al atributo area
+        virtual double calcularArea();
 
-
+        // PRE: -
+        // POST: Muestra la figura y sus atributos
+        virtual void mostrar();
 };
 
 

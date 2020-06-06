@@ -1,14 +1,20 @@
-//
-// Created by valentina on 26/5/20.
-//
-
 #include "Circulo.h"
+#include <iostream>
+
+using namespace std;
 
 Circulo:: Circulo(double radioOut) {
-    letraInicial = 'C';
     radio = radioOut;
+    area = calcularArea();
 }
 
-double Circulo:: obtenerArea() {
+double Circulo:: calcularArea() {
     return 3.14 * radio * radio;
+}
+
+void Circulo:: mostrar() {
+    cout << "\tCirculo"
+            "\n\t\tRadio: " << radio <<
+            "\n\t\tArea: " << area << "\n";
+
 }
