@@ -1,6 +1,6 @@
-#include <iostream>
 #include <regex>    // Se utiliza en la validarEntero()
 #include <cstdlib>  // Se utiliza en la validarEntero()
+#include <fstream>  // Se utiliza en cargarDatos()
 
 #include "Menu.h"
 #include "Lista.h"
@@ -39,7 +39,7 @@ void Menu:: cargarDatos(string archFiguras) {
 
         while (archivoFiguras >> figura) {
 
-            switch (figura) {
+            switch (toupper(figura)) {
 
                 case RECTANGULO:
                     archivoFiguras >> base;
@@ -76,7 +76,6 @@ void Menu:: mostrarOpciones() {
 void Menu:: elegirOpcion() {
     string strPos;
     cout << "\n   Ingrese la opcion que desea: ";
-    cout << "\n";
     cin >> strPos;
     opcion = validarEntero(strPos);
     validarRango(opcion);
@@ -89,7 +88,6 @@ int Menu:: validarEntero(string &num) {
     while (!regex_match(num, entero)) {
         cout << "Error, el tipo de dato que ingreso no es valido.\nPor favor reingrese (solo numeros enteros): ";
         cin >> num;
-        cout << "\n";
     }
     return atoi(num.c_str());;
 }

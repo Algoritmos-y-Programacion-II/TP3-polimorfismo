@@ -1,7 +1,6 @@
 #ifndef TRABAJOPRACTICO3FIGURAS_LISTA_H
 #define TRABAJOPRACTICO3FIGURAS_LISTA_H
 
-#include <fstream>
 #include "Nodo.h"
 
 template <typename Tipo>
