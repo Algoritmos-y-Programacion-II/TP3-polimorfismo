@@ -1,4 +1,5 @@
 #include "Rectangulo.h"
+
 #include <iostream>
 
 using namespace std;

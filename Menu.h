@@ -10,10 +10,13 @@ const int MIN = SALIR;
 const int MAX = 6;
 
 class Menu {
+
+    // Atributos
     private:
         int opcion;
         Lista listaFiguras;
 
+    // Metodos
     public:
 
         // PRE: -

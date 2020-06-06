@@ -38,13 +38,13 @@ class Lista {
         // POST: Devuelve el dato minimo
         Dato obtenerMin();
 
-        // PRE: datoOut debe ser valido, y 0 < posicion <= elementos
+        // PRE: datoExterno debe ser valido, y 0 < posicion <= elementos
         // POST: Agrega el dato recibido como parametro en la posicion recibida como parametro
-        void agregarEnPosicion(Dato datoOut, int posicionOut);
+        void agregarEnPosicion(Dato datoExterno, int posicionExterno);
 
-        // PRE: datoOut debe ser valido
+        // PRE: datoExterno debe ser valido
         // POST: Agrega el dato recibido como parametro al principio de la lista
-        void agregarAlFinal(Dato datoOut);
+        void agregarAlFinal(Dato datoExterno);
 
         // PRE: La lista debe estar creada y ser distinta de vacía
         // POST: Saca el elemento de la posicion recibida como parametro de la lista

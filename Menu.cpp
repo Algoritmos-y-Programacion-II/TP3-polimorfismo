@@ -1,12 +1,12 @@
+#include <iostream>
+#include <regex>    // Se utiliza en la validarEntero()
+#include <cstdlib>  // Se utiliza en la validarEntero()
+
 #include "Menu.h"
 #include "Lista.h"
 #include "Rectangulo.h"
 #include "Triangulo.h"
 #include "Circulo.h"
-
-#include <iostream>
-#include <regex>    // Se utiliza en la validarEntero()
-#include <cstdlib>  // Se utiliza en la validarEntero()
 
 const int OBTENER_FIGURA = 1;
 const int BAJA = 2;

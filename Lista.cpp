@@ -53,8 +53,8 @@ bool Lista:: vacia() {
     return primero == 0;
 }
 
-void Lista:: agregarAlFinal(Dato datoOut) {
-    Nodo* nuevoNodo = new Nodo(datoOut);
+void Lista:: agregarAlFinal(Dato datoExterno) {
+    Nodo* nuevoNodo = new Nodo(datoExterno);
     Nodo* pAux = primero;
     if (this->vacia())
         primero = nuevoNodo;
@@ -66,8 +66,8 @@ void Lista:: agregarAlFinal(Dato datoOut) {
     elementos++;
 }
 
-void Lista:: agregarEnPosicion(Dato datoOut, int posicion) {
-    Nodo* nuevoNodo = new Nodo(datoOut);
+void Lista:: agregarEnPosicion(Dato datoExterno, int posicion) {
+    Nodo* nuevoNodo = new Nodo(datoExterno);
 
     if (posicion == 0) {
         nuevoNodo->asignarSiguiente(primero);
