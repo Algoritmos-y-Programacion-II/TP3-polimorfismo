@@ -30,21 +30,17 @@ class Lista {
         // POST: Devuelve la cantidad de elementos
         int obtenerCantidadElementos();
 
-        // PRE: La lista debe estar creada y ser distinta de vacia
-        // POST: Devuelve el dato maximo
-        Tipo obtenerMax();
-
-        // PRE: La lista debe estar creada y ser distinta de vacia
-        // POST: Devuelve el dato minimo
-        Tipo obtenerMin();
-
         // PRE: datoExterno debe ser valido, y 0 < posicion <= elementos
         // POST: Agrega el dato recibido como parametro en la posicion recibida como parametro
         void agregarEnPosicion(Tipo datoExterno, int posicionExterno);
 
         // PRE: datoExterno debe ser valido
-        // POST: Agrega el dato recibido como parametro al principio de la lista
+        // POST: Agrega el dato recibido como parametro al final de la lista
         void agregarAlFinal(Tipo datoExterno);
+
+        // PRE: datoExterno debe ser valido
+        // POST: Agrega el dato recibido como parametro al principio de la lista
+        void agregarAlPrincipio(Tipo datoExterno);
 
         // PRE: La lista debe estar creada y ser distinta de vacía
         // POST: Saca el elemento de la posicion recibida como parametro de la lista
@@ -56,7 +52,7 @@ class Lista {
 
         // PRE: -
         // POST: Muestra por pantalla los datos de todos los nodos
-        void mostrarNodos();
+        void mostrarDatosNodos();
 
     private:
         // PRE: 0 < posicion <= elementos
@@ -78,7 +74,7 @@ Lista<Tipo>:: ~Lista() {
         sacar(0);
 }
 
-// <-------------------- Getters
+// <-------------------- Obtenciones
 template <typename Tipo>
 Tipo Lista<Tipo>:: obtenerDato(int posicion) {
     return obtenerNodo(posicion)->obtenerDato();
@@ -91,33 +87,13 @@ int Lista<Tipo>:: obtenerCantidadElementos() {
 
 template <typename Tipo>
 Nodo<Tipo>* Lista<Tipo>:: obtenerNodo(int posicion) {
-    Nodo<Tipo> *aux = primero;
+    Nodo<Tipo>* aux = primero;
     int i = 0;
     while (i < posicion) {
         aux = aux->obtenerSiguiente();
         i++;
     }
     return aux;
-}
-
-template <typename Tipo>
-Tipo Lista<Tipo>:: obtenerMax() {
-    Tipo max = obtenerDato(0);
-    for (int i = 0; i < elementos; i++) {
-        if (max->obtenerArea() < obtenerDato(i)->obtenerArea())
-            max = obtenerDato(i);
-    }
-    return max;
-}
-
-template <typename Tipo>
-Tipo Lista<Tipo>:: obtenerMin() {
-    Tipo min = obtenerDato(0);
-    for (int i = 0; i < elementos; i++) {
-        if (min->obtenerArea() > obtenerDato(i)->obtenerArea())
-            min = obtenerDato(i);
-    }
-    return min;
 }
 // -------------------->
 
@@ -130,12 +106,24 @@ template <typename Tipo>
 void Lista<Tipo>:: agregarAlFinal(Tipo datoExterno) {
     Nodo<Tipo>* nuevoNodo = new Nodo<Tipo>(datoExterno);
     Nodo<Tipo>* pAux = primero;
-    if (this->vacia())
+    if (vacia())
         primero = nuevoNodo;
     else {
-        while (pAux->obtenerSiguiente() != 0)
+        while (pAux->obtenerSiguiente())
             pAux = pAux->obtenerSiguiente();
         pAux->asignarSiguiente(nuevoNodo);
+    }
+    elementos++;
+}
+
+template <typename Tipo>
+void Lista<Tipo>:: agregarAlPrincipio(Tipo datoExterno) {
+    Nodo<Tipo>* nuevoNodo = new Nodo<Tipo>(datoExterno);
+    if (vacia())
+        primero = nuevoNodo;
+    else {
+        nuevoNodo->asignarSiguiente(primero);
+        primero = nuevoNodo;
     }
     elementos++;
 }
@@ -174,7 +162,7 @@ void Lista<Tipo>:: sacar(int posicion) {
 }
 
 template <typename Tipo>
-void Lista<Tipo>:: mostrarNodos() {
+void Lista<Tipo>:: mostrarDatosNodos() {
     if (!vacia()) {
         for (int i = 0; i < elementos; i++) {
             obtenerNodo(i)->mostrarNodo();

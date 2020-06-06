@@ -14,7 +14,7 @@ double Circulo:: calcularArea() {
 
 void Circulo:: mostrar() {
     cout << "\tCirculo"
-            "\n\t\t\tRadio: " << radio <<
-            "\n\t\t\tArea: " << area << "\n";
+            "\n\t\tRadio: " << radio <<
+            "\n\t\tArea: " << area << "\n";
 
 }

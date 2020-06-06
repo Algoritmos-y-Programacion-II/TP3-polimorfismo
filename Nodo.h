@@ -1,7 +1,7 @@
 #ifndef TRABAJOPRACTICO3FIGURAS_NODO_H
 #define TRABAJOPRACTICO3FIGURAS_NODO_H
 
-#include "../Figuras/Figura.h"
+#include "Figura.h"
 #include <iostream>
 
 //typedef Figura* Dato;
@@ -45,7 +45,6 @@ class Nodo {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// Constructor con parametros
 template <typename Tipo>
 Nodo<Tipo>:: Nodo(Tipo datoExterno) {
     dato = datoExterno;
@@ -57,7 +56,7 @@ Nodo<Tipo>:: ~Nodo() {
     delete dato;
 }
 
-// <-------------------- Setters
+// <-------------------- Asignaciones
 template <typename Tipo>
 void Nodo<Tipo>:: asignarSiguiente(Nodo<Tipo>* pSigExterno) {
     pSig = pSigExterno;
@@ -69,7 +68,7 @@ Nodo<Tipo>* Nodo<Tipo>:: obtenerSiguiente() {
 }
 // -------------------->
 
-// <-------------------- Getters
+// <-------------------- Obtenciones
 template <typename Tipo>
 void Nodo<Tipo>:: asignarDato(Tipo datoExterno) {
     dato = datoExterno;

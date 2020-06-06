@@ -1,7 +1,7 @@
 #ifndef TRABAJOPRACTICO3FIGURAS_MENU_H
 #define TRABAJOPRACTICO3FIGURAS_MENU_H
 
-#include "Lista/Lista.h"
+#include "Lista.h"
 
 using namespace std;
 
@@ -27,9 +27,9 @@ class Menu {
         // POST: Devuelve la lista
         Lista<Figura*> obtenerLista();
 
-        // PRE: archFiguras debe ser un string valido
+        // PRE: archivo debe estar abierto correctamente
         // POST: Carga los datos del archivo en la lista
-        void cargarDatos(string archFiguras);
+        void cargarDatos(ifstream& archivo);
 
         // PRE: -
         // POST: Muestra las opciones disponibles
@@ -45,7 +45,7 @@ class Menu {
 
         // PRE: Todos los enteros deben ser validos
         // POST: Si no se cumple que min <= num <= max le pide al usuario que reingrese el valor
-        void validarRango(int &num, int min = MIN, int max = MAX);
+        void validarRango(int &num, int min, int max);
 
         // PRE: El atributo opcion debe ser mayor o igual a cero y menor o igual a la cantidad de opciones que tenga
         //      el menu
@@ -80,15 +80,15 @@ class Menu {
     private:
 
         // PRE: posicion debe ser un entero valido mayor a cero y menor o igual a la cantidad de elementos de la lista
-        // POST: Le pide al usuario que ingrese los datos del rectangulo por teclado, y lo agrega a la lista
+        // POST: Le pide al usuario que ingrese los datos del rectangulo por teclado y lo agrega a la lista
         void agregarRectangulo(int posicion);
 
         // PRE: posicion debe ser un entero valido mayor a cero y menor o igual a la cantidad de elementos de la lista
-        // POST: Le pide al usuario que ingrese los datos del triangulo por teclado, y lo agrega a la lista
+        // POST: Le pide al usuario que ingrese los datos del triangulo por teclado y lo agrega a la lista
         void agregarTriangulo(int posicion);
 
         // PRE: posicion debe ser un entero valido mayor a cero y menor o igual a la cantidad de elementos de la lista
-        // POST: Le pide al usuario que ingrese los datos del circulo por teclado, y lo agrega a la lista
+        // POST: Le pide al usuario que ingrese los datos del circulo por teclado y lo agrega a la lista
         void agregarCirculo(int posicion);
 };
 
