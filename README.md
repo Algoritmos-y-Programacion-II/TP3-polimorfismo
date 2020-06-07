@@ -55,7 +55,7 @@ Instalación
 		    
 	- Windows [Descargar Git](https://git-scm.com/downloads)
 
-- Desde la terminal vaya a la ubicacion en donde desea tener el proyecto, y clonelo con `git clone https://github.com/valva-ro/trabajoPractico2Ahorcado` 
+- Desde la terminal vaya a la ubicacion en donde desea tener el proyecto, y clonelo con `git clone https://github.com/valva-ro/trabajoPractico3Figuras` 
 - Asegure de tener un archivo .txt en el directorio del proyecto.
 - Compile con `g++ *.cpp -o figuras`
    
