@@ -2,6 +2,7 @@
 #define TRABAJOPRACTICO3FIGURAS_MENU_H
 
 #include "Lista.h"
+#include "Objeto.h"
 
 using namespace std;
 
@@ -9,7 +10,7 @@ const int SALIR = 0;
 const int MIN = SALIR;
 const int MAX = 6;
 
-class Menu {
+class Menu : public Objeto {
 
     // Atributos
     private:
@@ -38,14 +39,6 @@ class Menu {
         // PRE: -
         // POST: Le pide al usuario que ingrese por teclado una opcion, y se la asigna al atributo opcion
         void elegirOpcion();
-
-        // PRE: -
-        // POST: Si num no es un entero, pide el reingreso hasta que lo sea y luego lo devuelve
-        int validarEntero(string &num);
-
-        // PRE: Todos los enteros deben ser validos
-        // POST: Si no se cumple que min <= num <= max le pide al usuario que reingrese el valor
-        void validarRango(int &num, int min, int max);
 
         // PRE: El atributo opcion debe ser mayor o igual a cero y menor o igual a la cantidad de opciones que tenga
         //      el menu

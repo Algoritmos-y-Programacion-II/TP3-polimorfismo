@@ -1,5 +1,4 @@
-#include <regex>    // Se utiliza en validarEntero()
-#include <cstdlib>  // Se utiliza en validarEntero()
+
 #include <fstream>  // Se utiliza en cargarDatos()
 
 #include "Menu.h"
@@ -73,8 +72,8 @@ void Menu:: elegirOpcion() {
     cout << "\n\tIngrese la opcion que desea: ";
     cin >> strPos;
     cout << "\n";
-    opcion = validarEntero(strPos);
-    validarRango(opcion, MIN, MAX);
+    opcion = validacion.validarEntero(strPos);
+    validacion.validarRango(opcion, MIN, MAX);
 }
 
 void Menu:: abrirSubmenu() {
@@ -118,9 +117,9 @@ void Menu:: mostrarFigura() {
         cout << "\tIngrese una posicion entre " << min << " y " << max << ": ";
         cin >> strPos;
         cout << "\n";
-        posicion = validarEntero(strPos);
+        posicion = validacion.validarEntero(strPos);
 
-        validarRango(posicion, min, max);
+        validacion.validarRango(posicion, min, max);
         listaFiguras.obtenerDato(posicion - 1)->mostrar();
     }
     cout << "\t- - - - - - - - - - - - - - - - - - - - -\n";
@@ -137,8 +136,8 @@ void Menu:: bajaFigura() {
         cout << "\tIngrese el numero del elemento que desea dar de baja [1 - " << listaFiguras.obtenerCantidadElementos() << "]: ";
         cin >> strPos;
 
-        int posicion = validarEntero(strPos);
-        validarRango(posicion, 1, listaFiguras.obtenerCantidadElementos());
+        int posicion = validacion.validarEntero(strPos);
+        validacion.validarRango(posicion, 1, listaFiguras.obtenerCantidadElementos());
 
         listaFiguras.sacar(posicion - 1);
 
@@ -165,8 +164,8 @@ void Menu:: agregarFigura() {
     cout << "\tIngrese la posicion en la que desea insertar la nueva figura [1 - " << listaFiguras.obtenerCantidadElementos() << "]: ";
     cin >> strPos;
 
-    int posicion = validarEntero(strPos);
-    validarRango(posicion, 1, listaFiguras.obtenerCantidadElementos());
+    int posicion = validacion.validarEntero(strPos);
+    validacion.validarRango(posicion, 1, listaFiguras.obtenerCantidadElementos());
 
     switch(toupper(tipoFigura)) {
 
@@ -247,7 +246,7 @@ void Menu:: agregarRectangulo(int posicion) {
 
     cout << "\tIngrese base: ";
     cin >> base;
-    cout << "\n\tIngrese altura: ";
+    cout << "\tIngrese altura: ";
     cin >> altura;
     cout << "\t\n";
 
@@ -261,7 +260,7 @@ void Menu:: agregarTriangulo(int posicion) {
 
     cout << "\tIngrese base: ";
     cin >> base;
-    cout << "\n\tIngrese altura: ";
+    cout << "\tIngrese altura: ";
     cin >> altura;
     cout << "\n";
 
@@ -279,24 +278,4 @@ void Menu:: agregarCirculo(int posicion) {
 
     Figura* figura = new Circulo(radio);
     listaFiguras.agregarEnPosicion(figura, posicion);
-}
-
-int Menu:: validarEntero(string &num) {
-
-    regex entero("^(\\+|-)?[[:digit:]]+");
-
-    while (!regex_match(num, entero)) {
-        cout << "\tError, el tipo de dato que ingreso no es valido.\n\tPor favor reingrese (solo numeros enteros): ";
-        cin >> num;
-    }
-    return atoi(num.c_str());;
-}
-
-void Menu:: validarRango(int &num, int min, int max) {
-    string strPos;
-    while (num < min || num > max) {
-        cout << "\tEl numero que ingreso esta fuera de rango, por favor reingrese: ";
-        cin >> strPos;
-        num = validarEntero(strPos);
-    }
 }
