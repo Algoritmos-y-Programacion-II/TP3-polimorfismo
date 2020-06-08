@@ -18,6 +18,8 @@ class Lista {
         // POST: Crea una lista con 0 elementos
         Lista();
 
+        Lista(const Lista<Tipo> &lista);
+
         // PRE: La lista debe estar creada
         // POST: Libera la memoria que ocupaba la lista
         ~Lista();
@@ -58,7 +60,20 @@ class Lista {
         // PRE: 0 < posicion <= elementos
         // POST: Devuelve un puntero de tipo nodo correspondiente con la posicion
         Nodo<Tipo>* obtenerNodo(int posicion);
+
+        void copiarDatos(Lista<Tipo>* lista, int inicio, int final);
 };
+
+template <typename Tipo>
+void Lista<Tipo>:: copiarDatos(Lista<Tipo>* lista, int inicio, int final) {
+    if (elementos > 0) {
+        for (int i = inicio; i < final; i++) {
+            agregarEnPosicion(lista->obtenerDato(i), i);
+        }
+    }
+}
+
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -66,6 +81,14 @@ template <typename Tipo>
 Lista<Tipo>:: Lista () {
     primero = 0;
     elementos = 0;
+}
+
+template<typename Tipo>
+Lista<Tipo>:: Lista(const Lista<Tipo> &lista) {
+    elementos = lista.elementos;
+    if (elementos > 0) {
+        copiarDatos(lista, 0, elementos);
+    }
 }
 
 template <typename Tipo>
