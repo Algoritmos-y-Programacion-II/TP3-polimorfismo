@@ -152,20 +152,8 @@ void Menu:: agregarFigura() {
 
     cout << "\t- - - - - - - - -  Alta - - - - - - - - -\n";
 
-    char tipoFigura;
-    string strPos;
-
-    cout << "\tIngrese el tipo de figura que desea\n"
-            "\t\t- [R]ectangulo\n"
-            "\t\t- [T]riangulo\n"
-            "\t\t- [C]irculo\n";
-    cin >> tipoFigura;
-
-    cout << "\tIngrese la posicion en la que desea insertar la nueva figura [1 - " << listaFiguras.obtenerCantidadElementos() << "]: ";
-    cin >> strPos;
-
-    int posicion = validacion.validarEntero(strPos);
-    validacion.validarRango(posicion, 1, listaFiguras.obtenerCantidadElementos());
+    int posicion = pedirPosicion();
+    char tipoFigura = pedirTipoFigura();
 
     switch(toupper(tipoFigura)) {
 
@@ -240,15 +228,45 @@ void Menu:: mostrarSupMin() {
     cout << "\t- - - - - - - - - - - - - - - - - - - - -\n";
 }
 
+int Menu:: pedirPosicion() {
+    string strPos;
+
+    cout << "\tIngrese la posicion en la que desea insertar la nueva figura [1 - " << listaFiguras.obtenerCantidadElementos() << "]: ";
+    cin >> strPos;
+    cout << "\n";
+
+    int posicion = validacion.validarEntero(strPos);
+    validacion.validarRango(posicion, 1, listaFiguras.obtenerCantidadElementos());
+
+    return posicion;
+}
+
+char Menu:: pedirTipoFigura() {
+
+    char tipoFigura;
+
+    cout << "\n\tIngrese el tipo de figura que desea\n"
+            "\t\t- [R]ectangulo\n"
+            "\t\t- [T]riangulo\n"
+            "\t\t- [C]irculo\n";
+    cout << "\t";
+    cin >> tipoFigura;
+    validacion.validarChar(tipoFigura);
+
+    return tipoFigura;
+}
+
 void Menu:: agregarRectangulo(int posicion) {
 
-    double base, altura;
+    string strBase, strAltura;
 
     cout << "\tIngrese base: ";
-    cin >> base;
+    cin >> strBase;
+    double base = validacion.validarDouble(strBase);
     cout << "\tIngrese altura: ";
-    cin >> altura;
-    cout << "\t\n";
+    cin >> strAltura;
+    double altura = validacion.validarDouble(strAltura);
+    cout << "\n";
 
     Figura* figura = new Rectangulo(base, altura);
     listaFiguras.agregarEnPosicion(figura, posicion);
@@ -256,12 +274,14 @@ void Menu:: agregarRectangulo(int posicion) {
 
 void Menu:: agregarTriangulo(int posicion) {
 
-    double base, altura;
+    string strBase, strAltura;
 
     cout << "\tIngrese base: ";
-    cin >> base;
+    cin >> strBase;
+    double base = validacion.validarDouble(strBase);
     cout << "\tIngrese altura: ";
-    cin >> altura;
+    cin >> strAltura;
+    double altura = validacion.validarDouble(strAltura);
     cout << "\n";
 
     Figura* figura = new Triangulo(base, altura);
@@ -270,10 +290,11 @@ void Menu:: agregarTriangulo(int posicion) {
 
 void Menu:: agregarCirculo(int posicion) {
 
-    double radio;
+    string strRadio;
 
     cout << "\tIngrese radio: ";
-    cin >> radio;
+    cin >> strRadio;
+    double radio = validacion.validarDouble(strRadio);
     cout << "\n";
 
     Figura* figura = new Circulo(radio);

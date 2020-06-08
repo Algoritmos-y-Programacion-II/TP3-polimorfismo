@@ -72,6 +72,9 @@ class Menu : public Objeto {
 
     private:
 
+        int pedirPosicion();
+        char pedirTipoFigura();
+
         // PRE: posicion debe ser un entero valido mayor a cero y menor o igual a la cantidad de elementos de la lista
         // POST: Le pide al usuario que ingrese los datos del rectangulo por teclado y lo agrega a la lista
         void agregarRectangulo(int posicion);
