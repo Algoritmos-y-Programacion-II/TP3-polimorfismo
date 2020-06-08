@@ -72,7 +72,12 @@ class Menu : public Objeto {
 
     private:
 
+        // PRE: -
+        // POST: Le pide al usuario que ingrese una posicion y la devuelve
         int pedirPosicion();
+
+        // PRE: -
+        // POST: Le pide al usuario que ingrese un tipo de figura y la devuelve
         char pedirTipoFigura();
 
         // PRE: posicion debe ser un entero valido mayor a cero y menor o igual a la cantidad de elementos de la lista
