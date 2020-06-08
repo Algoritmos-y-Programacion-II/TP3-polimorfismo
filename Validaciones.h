@@ -13,17 +13,21 @@ class Validaciones {
 
     public:
 
-        // PRE: -
+        // PRE: num es un string valido
         // POST: Si num no es un entero, pide el reingreso hasta que lo sea y luego lo devuelve
         int validarEntero(string num);
+
+        // PRE: num es un string valido
+        // POST: Si num no es double, pide el reingreso hasta que lo sea y luego lo devuelve
+        double validarDouble(string num);
 
         // PRE: Todos los enteros deben ser validos
         // POST: Si no se cumple que min <= num <= max le pide al usuario que reingrese el valor
         void validarRango(int &num, int min, int max);
 
+        // PRE: c es un char valido
+        // POST: Si c no es char, pide el reingreso hasta que lo sea
         void validarChar(char &c);
-
-        double validarDouble(string num);
 };
 
 
