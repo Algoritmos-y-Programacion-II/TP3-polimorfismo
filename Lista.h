@@ -64,17 +64,6 @@ class Lista {
         void copiarDatos(Lista<Tipo>* lista, int inicio, int final);
 };
 
-template <typename Tipo>
-void Lista<Tipo>:: copiarDatos(Lista<Tipo>* lista, int inicio, int final) {
-    if (elementos > 0) {
-        for (int i = inicio; i < final; i++) {
-            agregarEnPosicion(lista->obtenerDato(i), i);
-        }
-    }
-}
-
-
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 template <typename Tipo>
@@ -182,6 +171,14 @@ void Lista<Tipo>:: sacar(int posicion) {
     }
     delete borrar;
     elementos--;
+}
+
+template <typename Tipo>
+void Lista<Tipo>:: copiarDatos(Lista<Tipo>* lista, int inicio, int final) {
+    if (elementos > 0) {
+        for (int i = inicio; i < final; i++)
+            agregarEnPosicion(lista->obtenerDato(i), i);
+    }
 }
 
 template <typename Tipo>
