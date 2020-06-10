@@ -15,7 +15,12 @@ double Triangulo:: calcularArea() {
 }
 
 void Triangulo:: mostrar() {
-    cout << "\tTriangulo"
+    cout << "\tTriangulo\n"
+            "\t\t\t\t\t    *\n"
+            "\t\t\t\t\t   * *\n"
+            "\t\t\t\t\t  * * *\n"
+            "\t\t\t\t\t * * * *\n"
+            "\t\t\t\t\t* * * * *"
             "\n\t\tAltura: " << altura <<
             "\n\t\tBase: " << base <<
             "\n\t\tArea: " << area << "\n";
