@@ -14,47 +14,8 @@ const int MOSTRAR = 4;
 const int SUP_MAX = 5;
 const int SUP_MIN = 6;
 
-const char RECTANGULO = 'R';
-const char TRIANGULO = 'T';
-const char CIRCULO = 'C';
-
 int Menu:: obtenerOpcion() {
     return opcion;
-}
-
-Lista<Figura*> Menu:: obtenerLista() {
-    return listaFiguras;
-}
-
-void Menu:: cargarDatos(ifstream& archivo) {
-
-    char figura;
-    double primerNro, segundoNro;
-    Figura* dato;
-
-    while (archivo >> figura) {
-
-        switch (toupper(figura)) {
-
-            case RECTANGULO:
-                archivo >> primerNro;
-                archivo >> segundoNro;
-                dato = new Rectangulo(primerNro, segundoNro);
-                break;
-
-            case TRIANGULO:
-                archivo >> primerNro;
-                archivo >> segundoNro;
-                dato = new Triangulo(primerNro, segundoNro);
-                break;
-
-            case CIRCULO:
-                archivo >> primerNro;
-                dato = new Circulo(primerNro);
-                break;
-        }
-        listaFiguras.agregarAlFinal(dato);
-    }
 }
 
 void Menu:: mostrarOpciones() {
@@ -76,43 +37,43 @@ void Menu:: elegirOpcion() {
     validacion.validarRango(opcion, MIN, MAX);
 }
 
-void Menu:: abrirSubmenu() {
+void Menu:: abrirSubmenu(Lista<Figura*> &lista) {
 
     switch(opcion) {
 
         case OBTENER_FIGURA:
-            mostrarFigura();
+            mostrarFigura(lista);
             break;
 
         case BAJA:
-            bajaFigura();
+            bajaFigura(lista);
             break;
 
         case ALTA:
-            agregarFigura();
+            agregarFigura(lista);
             break;
 
         case MOSTRAR:
-            mostrarFiguras();
+            mostrarFiguras(lista);
             break;
 
         case SUP_MAX:
-            mostrarSupMax();
+            mostrarSupMax(lista);
             break;
 
         case SUP_MIN:
-            mostrarSupMin(); break;
+            mostrarSupMin(lista); break;
     }
 }
 
-void Menu:: mostrarFigura() {
+void Menu:: mostrarFigura(Lista<Figura*> &lista) {
 
     cout << "\t- - - - - - - - - Mostrar - - - - - - - -\n";
 
-    if (!listaFiguras.vacia()) {
+    if (!lista.vacia()) {
 
         string nombreFigura, strPos;
-        int posicion, min = 1, max = listaFiguras.obtenerCantidadElementos();
+        int posicion, min = 1, max = lista.obtenerCantidadElementos();
 
         cout << "\tIngrese una posicion entre " << min << " y " << max << ": ";
         cin >> strPos;
@@ -120,26 +81,26 @@ void Menu:: mostrarFigura() {
         posicion = validacion.validarEntero(strPos);
 
         validacion.validarRango(posicion, min, max);
-        listaFiguras.obtenerDato(posicion - 1)->mostrar();
+        lista.obtenerDato(posicion - 1)->mostrar();
     }
     cout << "\t- - - - - - - - - - - - - - - - - - - - -\n";
 }
 
-void Menu:: bajaFigura() {
+void Menu:: bajaFigura(Lista<Figura*> &lista) {
 
     cout << "\t- - - - - - - - -  Baja - - - - - - - - -\n";
-    if (!listaFiguras.vacia()) {
+    if (!lista.vacia()) {
 
         string strPos;
-        mostrarFiguras();
+        mostrarFiguras(lista);
 
-        cout << "\tIngrese el numero del elemento que desea dar de baja [1 - " << listaFiguras.obtenerCantidadElementos() << "]: ";
+        cout << "\tIngrese el numero del elemento que desea dar de baja [1 - " << lista.obtenerCantidadElementos() << "]: ";
         cin >> strPos;
 
         int posicion = validacion.validarEntero(strPos);
-        validacion.validarRango(posicion, 1, listaFiguras.obtenerCantidadElementos());
+        validacion.validarRango(posicion, 1, lista.obtenerCantidadElementos());
 
-        listaFiguras.sacar(posicion - 1);
+        lista.sacar(posicion - 1);
 
         cout << "\tSe saco el elemento de la posicion " << posicion << " con exito.\n";
 
@@ -148,41 +109,44 @@ void Menu:: bajaFigura() {
     cout << "\t- - - - - - - - - - - - - - - - - - - - -\n";
 }
 
-void Menu:: agregarFigura() {
+void Menu:: agregarFigura(Lista<Figura*> &lista) {
 
     cout << "\t- - - - - - - - -  Alta - - - - - - - - -\n";
 
-    int posicion = pedirPosicion();
+    cout << "\t-- AVISO -- La figura se agregará al final de la lista\n";
+    //int posicion = pedirPosicion(lista);
     char tipoFigura = pedirTipoFigura();
+
+    string strBase, strAltura, strRadio;
 
     switch(toupper(tipoFigura)) {
 
-        case RECTANGULO:
-            agregarRectangulo(posicion - 1);
+        case RECTANGULO: {
+            agregarRectangulo(lista);
             break;
-
-        case TRIANGULO:
-            agregarTriangulo(posicion - 1);
+        }
+        case TRIANGULO: {
+            agregarTriangulo(lista);
             break;
-
-        case CIRCULO:
-            agregarCirculo(posicion - 1);
+        }
+        case CIRCULO: {
+            agregarCirculo(lista);
             break;
-
+        }
         default:
             cout << "\tLa letra que ingreso no es valida.\n";
     }
     cout << "\t- - - - - - - - - - - - - - - - - - - - -\n";
 }
 
-void Menu:: mostrarFiguras() {
+void Menu:: mostrarFiguras(Lista<Figura*> &lista) {
     cout << "\t- - - - - - - - Figuras - - - - - - - - -\n";
 
-    if (!listaFiguras.vacia()) {
+    if (!lista.vacia()) {
 
-        for (int i = 0; i < listaFiguras.obtenerCantidadElementos(); i++) {
+        for (int i = 0; i < lista.obtenerCantidadElementos(); i++) {
             cout << "\t" << i + 1 << ". ";
-            listaFiguras.obtenerDato(i)->mostrar();
+            lista.obtenerDato(i)->mostrar();
             cout << "\n";
         }
     }
@@ -190,17 +154,17 @@ void Menu:: mostrarFiguras() {
     cout << "\t- - - - - - - - - - - - - - - - - - - - -\n";
 }
 
-void Menu:: mostrarSupMax() {
+void Menu:: mostrarSupMax(Lista<Figura*> &lista) {
     cout << "\t- - - - - - Mayor  superficie - - - - - -\n";
 
-    if (!listaFiguras.vacia()) {
+    if (!lista.vacia()) {
 
-        Figura* max = listaFiguras.obtenerDato(0);
+        Figura* max = lista.obtenerDato(0);
 
-        for (int i = 0; i < listaFiguras.obtenerCantidadElementos(); i++) {
+        for (int i = 0; i < lista.obtenerCantidadElementos(); i++) {
 
-            if (max->obtenerArea() < listaFiguras.obtenerDato(i)->obtenerArea())
-                max = listaFiguras.obtenerDato(i);
+            if (max->obtenerArea() < lista.obtenerDato(i)->obtenerArea())
+                max = lista.obtenerDato(i);
         }
         max->mostrar();
     }
@@ -209,17 +173,17 @@ void Menu:: mostrarSupMax() {
     cout << "\t- - - - - - - - - - - - - - - - - - - - -\n";
 }
 
-void Menu:: mostrarSupMin() {
+void Menu:: mostrarSupMin(Lista<Figura*> &lista) {
     cout << "\t- - - - - - Menor  superficie - - - - - -\n";
 
-    if (!listaFiguras.vacia()) {
+    if (!lista.vacia()) {
 
-        Figura* min = listaFiguras.obtenerDato(0);
+        Figura* min = lista.obtenerDato(0);
 
-        for (int i = 0; i < listaFiguras.obtenerCantidadElementos(); i++) {
+        for (int i = 0; i < lista.obtenerCantidadElementos(); i++) {
 
-            if (min->obtenerArea() > listaFiguras.obtenerDato(i)->obtenerArea())
-                min = listaFiguras.obtenerDato(i);
+            if (min->obtenerArea() > lista.obtenerDato(i)->obtenerArea())
+                min = lista.obtenerDato(i);
         }
         min->mostrar();
     }
@@ -228,15 +192,16 @@ void Menu:: mostrarSupMin() {
     cout << "\t- - - - - - - - - - - - - - - - - - - - -\n";
 }
 
-int Menu:: pedirPosicion() {
+int Menu:: pedirPosicion(Lista<Figura*> lista) {
     string strPos;
 
-    cout << "\tIngrese la posicion en la que desea insertar la nueva figura [1 - " << listaFiguras.obtenerCantidadElementos() << "]: ";
+    cout << "\tIngrese la posicion [1 - " << lista.obtenerCantidadElementos() << "]: ";
     cin >> strPos;
-    cout << "\n";
 
     int posicion = validacion.validarEntero(strPos);
-    validacion.validarRango(posicion, 1, listaFiguras.obtenerCantidadElementos());
+    validacion.validarRango(posicion, 1, lista.obtenerCantidadElementos());
+
+    cout << "\n\t -- AVISO -- La figura que estaba en la posicion " << posicion << " sera movida una posicion adelante\n";
 
     return posicion;
 }
@@ -256,7 +221,7 @@ char Menu:: pedirTipoFigura() {
     return tipoFigura;
 }
 
-void Menu:: agregarRectangulo(int posicion) {
+void Menu:: agregarRectangulo(Lista<Figura*> &lista) {
 
     string strBase, strAltura;
 
@@ -269,10 +234,10 @@ void Menu:: agregarRectangulo(int posicion) {
     cout << "\n";
 
     Figura* figura = new Rectangulo(base, altura);
-    listaFiguras.agregarEnPosicion(figura, posicion);
+    lista.agregarAlFinal(figura);
 }
 
-void Menu:: agregarTriangulo(int posicion) {
+void Menu:: agregarTriangulo(Lista<Figura*> &lista) {
 
     string strBase, strAltura;
 
@@ -285,10 +250,10 @@ void Menu:: agregarTriangulo(int posicion) {
     cout << "\n";
 
     Figura* figura = new Triangulo(base, altura);
-    listaFiguras.agregarEnPosicion(figura, posicion);
+    lista.agregarAlFinal(figura);
 }
 
-void Menu:: agregarCirculo(int posicion) {
+void Menu:: agregarCirculo(Lista<Figura*> &lista) {
 
     string strRadio;
 
@@ -298,5 +263,5 @@ void Menu:: agregarCirculo(int posicion) {
     cout << "\n";
 
     Figura* figura = new Circulo(radio);
-    listaFiguras.agregarEnPosicion(figura, posicion);
+    lista.agregarAlFinal(figura);
 }
