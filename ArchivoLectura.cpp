@@ -2,7 +2,7 @@
 // Created by valentina on 9/6/20.
 //
 
-#include "Archivo.h"
+#include "ArchivoLectura.h"
 #include "Rectangulo.h"
 #include "Triangulo.h"
 #include "Circulo.h"
@@ -12,10 +12,14 @@ const char TRIANGULO = 'T';
 const char CIRCULO = 'C';
 
 ArchivoLectura:: ArchivoLectura(string ruta) {
-    if (existe(ruta))
+    if (existe(ruta)) {
         archivo.open(ruta, ios::out);
-    else
+        abierto = true;
+    }
+    else {
         cout << "\n\t-- AVISO -- No se pudo abrir el archivo\n";
+        abierto = false;
+    }
 }
 
 ArchivoLectura:: ~ArchivoLectura() {
@@ -24,6 +28,7 @@ ArchivoLectura:: ~ArchivoLectura() {
 
 void ArchivoLectura:: cerrarArchivo() {
     archivo.close();
+    abierto = false;
 }
 
 char ArchivoLectura:: leerCaracter() {
@@ -32,7 +37,7 @@ char ArchivoLectura:: leerCaracter() {
     return c;
 }
 
-double ArchivoLectura:: leerReal() {
+double ArchivoLectura:: leerDouble() {
     double d;
     archivo >> d;
     return d;
@@ -42,8 +47,8 @@ bool ArchivoLectura:: finalArchivo() {
     return archivo.eof();
 }
 
-bool ArchivoLectura:: abierto() {
-    return !archivo.fail();
+bool ArchivoLectura:: estaAbierto() {
+    return abierto;
 }
 
 bool ArchivoLectura:: existe(string ruta) {
@@ -53,7 +58,7 @@ bool ArchivoLectura:: existe(string ruta) {
 
 void ArchivoLectura:: cargarDatos(Lista<Dato> &lista) {
 
-    if (abierto()) {
+    if (abierto) {
 
         cout << "\n\tCargando datos del archivo \n";
         char figura;
@@ -65,26 +70,28 @@ void ArchivoLectura:: cargarDatos(Lista<Dato> &lista) {
             switch (toupper(figura)) {
 
                 case RECTANGULO:
-                    primerNro = leerReal();
-                    segundoNro = leerReal();
+                    primerNro = leerDouble();
+                    segundoNro = leerDouble();
                     dato = new Rectangulo(primerNro, segundoNro);
+                    lista.agregarAlFinal(dato);
                     break;
 
                 case TRIANGULO:
-                    primerNro = leerReal();
-                    segundoNro = leerReal();
+                    primerNro = leerDouble();
+                    segundoNro = leerDouble();
                     dato = new Triangulo(primerNro, segundoNro);
+                    lista.agregarAlFinal(dato);
                     break;
 
                 case CIRCULO:
-                    primerNro = leerReal();
+                    primerNro = leerDouble();
                     dato = new Circulo(primerNro);
+                    lista.agregarAlFinal(dato);
                     break;
 
                 default:
-                    cout << "\t-- AVISO -- Se encontró un dato inválido en el archivo.";
+                    cout << "\t-- AVISO -- Se encontro un dato incorrecto en el archivo: \"" << figura << "\". Se ignorara y se proseguira con la lectura.\n";
             }
-            lista.agregarAlFinal(dato);
         }
         cout << "\tDatos cargados con exito\n\n";
     }

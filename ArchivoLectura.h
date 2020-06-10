@@ -2,8 +2,8 @@
 // Created by valentina on 9/6/20.
 //
 
-#ifndef TRABAJOPRACTICO3FIGURAS_ARCHIVO_H
-#define TRABAJOPRACTICO3FIGURAS_ARCHIVO_H
+#ifndef TRABAJOPRACTICO3FIGURAS_ARCHIVOLECTURA_H
+#define TRABAJOPRACTICO3FIGURAS_ARCHIVOLECTURA_H
 
 #include <fstream>
 #include "Lista.h"
@@ -15,6 +15,7 @@ class ArchivoLectura {
 
     private:
         ifstream archivo;
+        bool abierto;
 
     public:
 
@@ -36,11 +37,11 @@ class ArchivoLectura {
 
         // PRE: El archivo fue abierto, el dato a leer debe ser un numero
         // POST: Lee un dato del archivo como double y lo devuelve
-        double leerReal();
+        double leerDouble();
 
         // PRE: -
-        // POST: Devuelve true si el archivo esta abierto correctamente
-        bool abierto();
+        // POST: Devuelve true si el archivo esta abierto
+        bool estaAbierto();
 
         // PRE: El archivo fue abierto
         // POST: Devuelve true si se llego al final del archivo
@@ -56,4 +57,4 @@ class ArchivoLectura {
 };
 
 
-#endif //TRABAJOPRACTICO3FIGURAS_ARCHIVO_H
+#endif //TRABAJOPRACTICO3FIGURAS_ARCHIVOLECTURA_H
