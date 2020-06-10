@@ -13,7 +13,13 @@ double Circulo:: calcularArea() {
 }
 
 void Circulo:: mostrar() {
-    cout << "\tCirculo"
+    cout << "\tCirculo\n"
+            "\t\t\t\t\t    * * * *\n"
+            "\t\t\t\t\t * * * * * * *\n"
+            "\t\t\t\t\t* * * * * * * *\n"
+            "\t\t\t\t\t* * * * * * * *\n"
+            "\t\t\t\t\t * * * * * * *\n"
+            "\t\t\t\t\t    * * * *"
             "\n\t\tRadio: " << radio <<
             "\n\t\tArea: " << area << "\n";
 

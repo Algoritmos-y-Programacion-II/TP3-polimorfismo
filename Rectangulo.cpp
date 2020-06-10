@@ -15,7 +15,11 @@ double Rectangulo:: calcularArea() {
 }
 
 void Rectangulo:: mostrar() {
-    cout << "\tRectangulo"
+    cout << "\tRectangulo\n"
+            "\t\t\t\t\t* * * * * * *\n"
+            "\t\t\t\t\t* * * * * * *\n"
+            "\t\t\t\t\t* * * * * * *\n"
+            "\t\t\t\t\t* * * * * * *"
             "\n\t\tAltura: " << altura <<
             "\n\t\tBase: " << base <<
             "\n\t\tArea: " << area << "\n";
