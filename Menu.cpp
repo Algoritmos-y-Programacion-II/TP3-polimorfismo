@@ -14,6 +14,10 @@ const int MOSTRAR = 4;
 const int SUP_MAX = 5;
 const int SUP_MIN = 6;
 
+const char RECTANGULO = 'R';
+const char TRIANGULO = 'T';
+const char CIRCULO = 'C';
+
 int Menu:: obtenerOpcion() {
     return opcion;
 }

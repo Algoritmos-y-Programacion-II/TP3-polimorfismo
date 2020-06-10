@@ -3,14 +3,14 @@
   Trabajo Practico Individual N3: Lista Polimorfica de Figuras
   Hecho por Valentina Varela Rodriguez - 105374
 
-  NOTA: Hay dos archivos de prueba porque se puede indicar por la linea de comandos el nombre del archivo a abrir.
+  NOTA: Hay dos archivos de texto porque se puede indicar por la linea de comandos el nombre del archivo a abrir.
         En caso de no indicar nada, se utiliza 'figuras.txt'
 */
 
 #include <iostream>
 
 #include "Menu.h"
-#include "Archivo.h"
+#include "ArchivoLectura.h"
 
 int main(int argc, char* argv[]) {
 
@@ -26,15 +26,17 @@ int main(int argc, char* argv[]) {
 
     ArchivoLectura archivoFiguras(archFiguras);
     Lista<Dato> listaFiguras;
-    Menu menu;
 
     archivoFiguras.cargarDatos(listaFiguras);
 
-    do {
-        menu.mostrarOpciones();
-        menu.elegirOpcion();
-        menu.abrirSubmenu(listaFiguras);
-    } while (menu.obtenerOpcion() != SALIR);
+    if (archivoFiguras.estaAbierto()) {
+        Menu menu;
+        do {
+            menu.mostrarOpciones();
+            menu.elegirOpcion();
+            menu.abrirSubmenu(listaFiguras);
+        } while (menu.obtenerOpcion() != SALIR);
+    }
 
     return 0;
 }

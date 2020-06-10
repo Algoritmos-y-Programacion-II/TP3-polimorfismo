@@ -10,10 +10,6 @@ const int SALIR = 0;
 const int MIN = SALIR;
 const int MAX = 6;
 
-const char RECTANGULO = 'R';
-const char TRIANGULO = 'T';
-const char CIRCULO = 'C';
-
 typedef Figura* Dato;
 
 class Menu : public Objeto {
