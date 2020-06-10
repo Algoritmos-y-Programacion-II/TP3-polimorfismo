@@ -29,10 +29,6 @@ class Menu : public Objeto {
         // POST: Devuelve la opcion
         int obtenerOpcion();
 
-        // PRE: archivo debe estar abierto correctamente
-        // POST: Carga los datos del archivo en la lista
-        void cargarDatos(ifstream& archivo);
-
         // PRE: -
         // POST: Muestra las opciones disponibles
         void mostrarOpciones();
@@ -72,10 +68,6 @@ class Menu : public Objeto {
         void mostrarSupMin(Lista<Dato> &lista);
 
     private:
-
-        // PRE: -
-        // POST: Le pide al usuario que ingrese una posicion y la devuelve
-        int pedirPosicion(Lista<Dato> lista);
 
         // PRE: -
         // POST: Le pide al usuario que ingrese un tipo de figura y la devuelve

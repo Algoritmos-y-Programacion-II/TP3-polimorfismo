@@ -192,20 +192,6 @@ void Menu:: mostrarSupMin(Lista<Figura*> &lista) {
     cout << "\t- - - - - - - - - - - - - - - - - - - - -\n";
 }
 
-int Menu:: pedirPosicion(Lista<Figura*> lista) {
-    string strPos;
-
-    cout << "\tIngrese la posicion [1 - " << lista.obtenerCantidadElementos() << "]: ";
-    cin >> strPos;
-
-    int posicion = validacion.validarEntero(strPos);
-    validacion.validarRango(posicion, 1, lista.obtenerCantidadElementos());
-
-    cout << "\n\t -- AVISO -- La figura que estaba en la posicion " << posicion << " sera movida una posicion adelante\n";
-
-    return posicion;
-}
-
 char Menu:: pedirTipoFigura() {
 
     char tipoFigura;
