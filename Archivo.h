@@ -15,7 +15,6 @@ typedef Figura* Dato;
 class ArchivoLectura {
 
     private:
-        string ruta;
         ifstream archivo;
 
     public:
