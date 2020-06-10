@@ -8,13 +8,12 @@
 */
 
 #include <iostream>
-#include <fstream>
 
 #include "Menu.h"
+#include "Archivo.h"
 
 int main(int argc, char* argv[]) {
 
-    Menu menu;
     string archFiguras = "figuras.txt";
 
     if (argc == 2)
@@ -25,22 +24,17 @@ int main(int argc, char* argv[]) {
                 "\t\t\tSe utilizara \"figuras.txt\" como nombre del archivo.\n\n";
     }
 
-    ifstream archivoFiguras(archFiguras);
+    ArchivoLectura archivoFiguras(archFiguras);
+    Lista<Dato> listaFiguras;
+    Menu menu;
 
-    if (!archivoFiguras.fail()) {
+    archivoFiguras.cargarDatos(listaFiguras);
 
-        cout << "\n\tCargando datos del archivo \"" << archFiguras << "\"\n";
-        menu.cargarDatos(archivoFiguras);
-        cout << "\tDatos cargados con exito\n\n";
-
-        do {
-            menu.mostrarOpciones();
-            menu.elegirOpcion();
-            menu.abrirSubmenu();
-        } while (menu.obtenerOpcion() != SALIR);
-
-    } else
-        cout << "\tNo se pudo abrir el archivo.\n";
+    do {
+        menu.mostrarOpciones();
+        menu.elegirOpcion();
+        menu.abrirSubmenu(listaFiguras);
+    } while (menu.obtenerOpcion() != SALIR);
 
     return 0;
 }
