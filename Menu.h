@@ -69,17 +69,21 @@ class Menu : public Objeto {
         // POST: Le pide al usuario que ingrese un tipo de figura y la devuelve
         char pedirTipoFigura();
 
+        // PRE: -
+        // POST: Le pide al usuario que ingrese una posicion y la devuelve
+        int pedirPosicion(int min, int max);
+
         // PRE: posicion debe ser un entero valido mayor a cero y menor o igual a la cantidad de elementos de la lista
         // POST: Le pide al usuario que ingrese los datos del rectangulo por teclado y lo agrega a la lista
-        void agregarRectangulo(Lista<Dato> &lista);
+        void agregarRectangulo(Lista<Dato> &lista, int posicion);
 
         // PRE: posicion debe ser un entero valido mayor a cero y menor o igual a la cantidad de elementos de la lista
         // POST: Le pide al usuario que ingrese los datos del triangulo por teclado y lo agrega a la lista
-        void agregarTriangulo(Lista<Dato> &lista);
+        void agregarTriangulo(Lista<Dato> &lista, int posicion);
 
         // PRE: posicion debe ser un entero valido mayor a cero y menor o igual a la cantidad de elementos de la lista
         // POST: Le pide al usuario que ingrese los datos del circulo por teclado y lo agrega a la lista
-        void agregarCirculo(Lista<Dato> &lista);
+        void agregarCirculo(Lista<Dato> &lista, int posicion);
 };
 
 
