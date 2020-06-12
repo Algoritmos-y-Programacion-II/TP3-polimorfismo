@@ -116,7 +116,10 @@ bool Lista<Tipo>:: vacia() {
 
 template <typename Tipo>
 void Lista<Tipo>:: agregarAlFinal(Tipo datoExterno) {
-    agregarEnPosicion(datoExterno, elementos - 1);
+    if (elementos == 0)
+        agregarEnPosicion(datoExterno, elementos);
+    else
+        agregarEnPosicion(datoExterno, elementos - 1);
 }
 
 template <typename Tipo>
