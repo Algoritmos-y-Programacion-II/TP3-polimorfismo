@@ -21,6 +21,10 @@ class Validaciones {
         // POST: Si no se cumple que min <= num <= max le pide al usuario que reingrese el valor
         void validarRango(int &num, int min, int max);
 
+        // PRE: num es un double valido
+        // POST: Si num es menor o igual a cero, pide el reingreso hasta que lo sea y luego lo devuelve
+        void validarDoublePositivo(double &num);
+
         // PRE: c es un char valido
         // POST: Si c no es char, pide el reingreso hasta que lo sea
         void validarChar(char &c);

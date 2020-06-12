@@ -23,6 +23,15 @@ void Validaciones:: validarRango(int &num, int min, int max) {
     }
 }
 
+void Validaciones:: validarDoublePositivo(double &num) {
+    string strDouble;
+    while (num <= 0) {
+        cout << "\tEl numero que ingreso es menor o igual a cero, por favor reingrese: ";
+        cin >> strDouble;
+        num = validarDouble(strDouble);
+    }
+}
+
 void Validaciones:: validarChar(char &c) {
     while (!isalpha(c)) {
         cout << "\tError, lo que ingreso no es una letra.\n\tPor favor reingrese: ";

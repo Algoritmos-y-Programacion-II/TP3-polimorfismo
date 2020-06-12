@@ -192,7 +192,7 @@ void Menu:: mostrarSupMin(Lista<Figura*> &lista) {
 
 int Menu:: pedirPosicion(int min, int max) {
     string strPos;
-    cout << "\tIngrese la posicion en la que desea insertar la figura [1-" << max << "]: ";
+    cout << "\tIngrese la posicion en la que desea insertar la figura [1 - " << max << "]: ";
     cin >> strPos;
     int posicion = validacion.validarEntero(strPos);
     validacion.validarRango(posicion, min, max);
@@ -221,9 +221,12 @@ void Menu:: agregarRectangulo(Lista<Figura*> &lista, int posicion) {
     cout << "\tIngrese base: ";
     cin >> strBase;
     double base = validacion.validarDouble(strBase);
+    validacion.validarDoublePositivo(base);
+
     cout << "\tIngrese altura: ";
     cin >> strAltura;
     double altura = validacion.validarDouble(strAltura);
+    validacion.validarDoublePositivo(altura);
 
     Figura* figura = new Rectangulo(base, altura);
     lista.agregarEnPosicion(figura, posicion-1);
@@ -236,9 +239,12 @@ void Menu:: agregarTriangulo(Lista<Figura*> &lista, int posicion) {
     cout << "\tIngrese base: ";
     cin >> strBase;
     double base = validacion.validarDouble(strBase);
+    validacion.validarDoublePositivo(base);
+
     cout << "\tIngrese altura: ";
     cin >> strAltura;
     double altura = validacion.validarDouble(strAltura);
+    validacion.validarDoublePositivo(altura);
 
     Figura* figura = new Triangulo(base, altura);
     lista.agregarEnPosicion(figura, posicion-1);
@@ -251,6 +257,7 @@ void Menu:: agregarCirculo(Lista<Figura*> &lista, int posicion) {
     cout << "\tIngrese radio: ";
     cin >> strRadio;
     double radio = validacion.validarDouble(strRadio);
+    validacion.validarDoublePositivo(radio);
 
     Figura* figura = new Circulo(radio);
     lista.agregarEnPosicion(figura, posicion-1);
