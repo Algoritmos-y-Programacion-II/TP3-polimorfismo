@@ -229,7 +229,7 @@ void Menu:: agregarRectangulo(Lista<Figura*> &lista, int posicion) {
     validacion.validarDoublePositivo(altura);
 
     Figura* figura = new Rectangulo(base, altura);
-    lista.agregarEnPosicion(figura, posicion-1);
+    lista.agregarEnPosicion(figura, posicion - 1);
 }
 
 void Menu:: agregarTriangulo(Lista<Figura*> &lista, int posicion) {
@@ -247,7 +247,7 @@ void Menu:: agregarTriangulo(Lista<Figura*> &lista, int posicion) {
     validacion.validarDoublePositivo(altura);
 
     Figura* figura = new Triangulo(base, altura);
-    lista.agregarEnPosicion(figura, posicion-1);
+    lista.agregarEnPosicion(figura, posicion - 1);
 }
 
 void Menu:: agregarCirculo(Lista<Figura*> &lista, int posicion) {
@@ -260,5 +260,5 @@ void Menu:: agregarCirculo(Lista<Figura*> &lista, int posicion) {
     validacion.validarDoublePositivo(radio);
 
     Figura* figura = new Circulo(radio);
-    lista.agregarEnPosicion(figura, posicion-1);
+    lista.agregarEnPosicion(figura, posicion - 1);
 }

@@ -116,28 +116,12 @@ bool Lista<Tipo>:: vacia() {
 
 template <typename Tipo>
 void Lista<Tipo>:: agregarAlFinal(Tipo datoExterno) {
-    Nodo<Tipo>* nuevoNodo = new Nodo<Tipo>(datoExterno);
-    Nodo<Tipo>* pAux = primero;
-    if (vacia())
-        primero = nuevoNodo;
-    else {
-        while (pAux->obtenerSiguiente())
-            pAux = pAux->obtenerSiguiente();
-        pAux->asignarSiguiente(nuevoNodo);
-    }
-    elementos++;
+    agregarEnPosicion(datoExterno, elementos - 1);
 }
 
 template <typename Tipo>
 void Lista<Tipo>:: agregarAlPrincipio(Tipo datoExterno) {
-    Nodo<Tipo>* nuevoNodo = new Nodo<Tipo>(datoExterno);
-    if (vacia())
-        primero = nuevoNodo;
-    else {
-        nuevoNodo->asignarSiguiente(primero);
-        primero = nuevoNodo;
-    }
-    elementos++;
+    agregarEnPosicion(datoExterno, 0);
 }
 
 template <typename Tipo>
