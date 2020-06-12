@@ -1,7 +1,3 @@
-//
-// Created by valentina on 9/6/20.
-//
-
 #include "ArchivoLectura.h"
 #include "Rectangulo.h"
 #include "Triangulo.h"

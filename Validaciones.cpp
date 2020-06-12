@@ -1,11 +1,6 @@
-//
-// Created by valentina on 8/6/20.
-//
-
 #include "Validaciones.h"
 
-#include <regex>    // Se utiliza en validarEntero()
-#include <cstdlib>  // Se utiliza en validarEntero()
+#include <regex>    // Se utiliza en validarEntero() y validarDouble()
 #include <iostream>
 
 int Validaciones:: validarEntero(string num) {
