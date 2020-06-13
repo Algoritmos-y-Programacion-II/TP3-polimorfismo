@@ -1,10 +1,8 @@
 #ifndef TRABAJOPRACTICO3FIGURAS_NODO_H
 #define TRABAJOPRACTICO3FIGURAS_NODO_H
 
-#include "Figura.h"
 #include <iostream>
 
-//typedef Figura* Dato;
 template <typename Tipo>
 class Nodo {
 
